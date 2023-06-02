@@ -1,5 +1,3 @@
-
-
 //TOP NAVIGATION
 function NavBar() {
     var x = document.getElementById("myTopnav");

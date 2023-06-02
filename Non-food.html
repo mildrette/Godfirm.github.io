@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <style>
+        h1 {
+            font-family: Satisfy;
+            font-size: 50px;
+            text-align: center;
+            color: black;
+            padding: 1%;
+        }
+
+        #gallery {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
+
+            -webkit-column-gap: 20px;
+            -moz-column-gap: 20px;
+            column-gap: 20px;
+        }
+
+        @media (max-width:1200px) {
+            #gallery {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+
+                -webkit-column-gap: 20px;
+                -moz-column-gap: 20px;
+                column-gap: 20px;
+            }
+        }
+
+        @media (max-width:800px) {
+            #gallery {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+
+                -webkit-column-gap: 20px;
+                -moz-column-gap: 20px;
+                column-gap: 20px;
+            }
+        }
+
+        @media (max-width:600px) {
+            #gallery {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+            }
+        }
+
+        #gallery img,
+        #gallery video {
+            width: 100%;
+            height: auto;
+            margin: 4% auto;
+            box-shadow: -3px 5px 15px #000;
+            cursor: pointer;
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+
+        .modal-img,
+        .model-vid {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-body {
+            padding: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <div class="header">
+            <section>
+                <span><a href="emailto:albertinejaphet@gmail.com"><i class="fa fa-envelope"></i>
+                        albertinejapheth@gmail.com</a></span>
+                <span><a href="tel:"><i class="fa fa-phone"></i> (+237) 670 81 09 95</a></span>
+            </section>
+            <section>
+                <span><a
+                        href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
+                            class="fa fa-facebook"></i></a></span>
+                <span><a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
+                            class="fa fa-instagram"></i></a></span>
+                <span><a href="tell:+237 679243380"><i class="fa fa-whatsapp"></i></a></span>
+            </section>
+        </div>
+    </header>
+
+    <!-- header ID section TOP NAVIGATION-->
+    <nav id="header">
+        <div class="topnav" id="myTopnav">
+            <a href="index.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="snacks.html">Food Items</a>
+            <a href="building.html">contruction</a>
+            <a href="Non-food.html">Non-food items</a>
+            <a href="tell:+237 679243380">Contact</a>
+
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
+        </div>
+    </nav>
+
+    <!--=======================  PRODUCT SECTION SECTION4 ==========================-->
+    <div id="services" class="section1">
+        <div class="title_header">
+            <h1 class="title inline-photo2 show-on-scroll2"><em>Items and Equiptment Availble</em></h1>
+            <h3>With Us, the limit is your imaginations. take a look at our services below.</h3>
+            <span class="border-shape"></span>
+        </div>
+        <hr>
+        <div id="gallery" class="container-fluid">
+            <img src="/images/Non-food-Items/1bucket.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/31Ktz+CVANL.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/71Hm0lw61xL._AC_UF894,1000_QL80_.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/71shCE5WUqL._AC_UF894,1000_QL80_.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/71tmcbcIlSL.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/plateset.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/628p-jenny-sales-and-services-original-imafkzukqcsgfxuv.webp"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/40290973_1-nayasa-square-bathroom-set-dlx-bucket-25-ltr-mug-15-ltr-stool-soap-case-dustbin-tub-brown-cream.webp"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_003.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_004.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/1bucket.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_002.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/waterpot_.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/vita-saggia-13-pieces-stainless-steel-measuring-cup-and-spoon-set.webp"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/the-pros-and-cons-of-ceramic-dinnerware-for-everyday-use.webp"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/spons.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_005.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_006.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_011.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_014.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/signal-2023-05-26-230048_030.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/s940941429591493842_p846_i1_w416.jpeg" class="img-responsive">
+            <img src="/images/Non-food-Items/pot.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/png-clipart-non-stick-surface-cookware-kitchen-frying-pan-tableware-kitchen-miscellaneous-kitchen.png"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/plastic-bathroom-mug-250x250.webp" class="img-responsive">
+            <img src="/images/Non-food-Items/plate_.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/platename.webp" class="img-responsive">
+            <img src="/images/Non-food-Items/setbucket.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/matelas_-_lily_mattresses_-_orthop_dique_habill_simple_-_1_mois_2_1.jpg"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/Oates-Indoor-Jumbo-Broom-Group-scaled.webp" class="img-responsive">
+            <img src="/images/Non-food-Items/k_archive_ac6f0d067bcee2137eb4cd397cc469e3bb927a4b.jpeg"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/k54757_a7f.webp" class="img-responsive">
+            <img src="/images/Non-food-Items/f640f604-d6f9-4607-a1d9-629fa53723d8.3bed6b4a0de1bc9315e1453cd8e5502f.jpeg"
+                class="img-responsive">
+            <img src="/images/Non-food-Items/broomdustpanmop-2048px-4565.jpg" class="img-responsive">
+
+            <img src="/images/Non-food-Items/1bucket.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/1bucket.jpg" class="img-responsive">
+            <img src="/images/Non-food-Items/1bucket.jpg" class="img-responsive">
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("img").click(function () {
+                    var t = $(this).attr("src");
+                    $(".modal-body").html("<img src='" + t + "' class='modal-img'>");
+                    $("#myModal").modal();
+                });
+
+                $("video").click(function () {
+                    var v = $("video > source");
+                    var t = v.attr("src");
+                    $(".modal-body").html("<video class='model-vid' controls><source src='" + t + "' type='video/mp4'></source></video>");
+                    $("#myModal").modal();
+                });
+            });//EOF Document.ready
+        </script>
+
+
+        <!--======================= FOOTER =======================-->
+        <footer>
+            <div class="middle_section">
+                <section>
+                    <span>Visit our social media Handles</span>
+
+                    <span>
+                        <a
+                            href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
+                                target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
+                            target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="tel:+237 679 24 33 80" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                    </span>
+                    <!-- <span>
+					<a href="tel:+237 679 24 33 80"> Contact Us With Just a Click</a>
+				</span> -->
+                </section>
+            </div>
+            <div class="bottom_section">
+                <span>B.J.C LTD.</span>
+            </div>
+        </footer>
+
+
+        <!--JAVASCRIPT-->
+        <script type="text/javascript" src="js/custom.js"></script>
+
+
+        <!-- Bootstrap's Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
