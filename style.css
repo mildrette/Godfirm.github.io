@@ -539,10 +539,10 @@
     .section1 .cards {
     width: calc(100% - 2em);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
     grid-gap: 2em;
-    grid-template-areas: "a a b c e" "a a  d d e";
+    grid-template-areas: "a b c e" "a d e";
     width: 100%;
     }
     
@@ -577,7 +577,7 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
     }
 
-    .section1 .card:nth-child(1) {
+    /* .section1 .card:nth-child(1) {
     grid-area: a;
     }
 
@@ -595,7 +595,7 @@
 
     .section1 .card:nth-child(5) {
       grid-area: e;
-      }
+      } */
 
     .section1 .card-content{
     position: absolute;
