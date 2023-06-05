@@ -1,13 +1,14 @@
-*,html{
+*, html{
     scroll-behavior: smooth;
     }
+
     *, *:after, *:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     }
 
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
     height: 12px;
     width: 8px;
     background: #000;
@@ -19,7 +20,7 @@
     ::-webkit-scrollbar-corner {
     background: #000;
     }
-    
+     */
     
     /*====================== DEFAULT=======================*/
     body{
@@ -33,12 +34,12 @@
     color:white;
     }
     
-    a,button{
+    a, button{
     transition:0.5s;
     }
     
     p{
-    line-height:1.8em;
+    line-height:2em;
     letter-spacing:0.06em;
     }
     
@@ -46,7 +47,7 @@
     border:0;
     }
     
-    a, button, input, textarea, select{
+    a, button, select{
     outline:none !important;
     }
     
@@ -176,6 +177,13 @@
     font-size:1em;
     }
 
+
+
+
+
+
+
+
     body a, p, h2, h3 {
       width:100%;
       font-size: 30px;
@@ -194,7 +202,6 @@
       }
       }
       
-    }
     
     
 
