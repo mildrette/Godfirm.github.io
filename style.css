@@ -281,13 +281,7 @@
     position:relative;
     top:10px;
     }
-    
-    #logo{
-    width:120px;
-    position:relative;
-    top:-10px;
-    }
-    
+  
     #icon{
     float:right;
     }
@@ -310,12 +304,7 @@
     
     
     @media screen and (max-width: 1120px) {
-    .logo{
-    width:20px;
-    position:static;
-    }
-  
-    .topnav a:not(:first-child), .dropbtn {
+    .topnav a:not(:first-child) {
     display: none;
     }
     .topnav a.icon {
@@ -396,15 +385,16 @@
     width:100%;
     }
     .banner section h2{
-    font-size:2em;
+    font-size:5em;
     }
     .banner section .cursive{
     font-size:2.3em;
-    line-height:2;
+    line-height:1;
     }
     .banner .btn1{
     margin:2vh 10px;
     line-height:1;
+    font-size: 30px;
     }
     }
     
@@ -488,11 +478,11 @@
     
     .about-japhet .title{
     font-size:1.8em;
-    line-height: 2;
+    line-height: 1;
     }
     
     .about-japhet p{
-    font-size:18px;
+    font-size:20px;
     }
     .about-japhet .btn1{
       display:inline-block;
