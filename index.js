@@ -20,4 +20,4 @@ function NavBar() {
     document.getElementById("header").style.top = "4rem";
     document.getElementById("roll_back").style.display = "none";
     }
-    }
+    };
