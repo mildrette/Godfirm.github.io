@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+		body {
+			font-family: 'Arvo', sans-serif;
+			color: #515151;
+			background-color: #f1e7b0;
+			margin: 3rem;
+		}
+
+		/* --------------------------------------------------
+|   Gallery Flexbox Grid                             |
+|   Original: https://codepen.io/ramenhog/pen/MpORPa |
+ ------------------------------------------------- */
+
+		section {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		@supports (display: grid) {
+			section {
+				display: block;
+			}
+		}
+
+		.message {
+			border: 1px solid #d2d0d0;
+			padding: 2em;
+			font-size: 1.7vw;
+			-webkit-box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+			box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+		}
+
+		@supports (display: grid) {
+			.message {
+				display: none;
+			}
+		}
+
+		.section {
+			display: none;
+			padding: 2rem;
+		}
+
+		@media screen and (min-width: 768px) {
+			.section {
+				padding: 4rem;
+			}
+		}
+
+		@supports (display: grid) {
+			.section {
+				display: block;
+			}
+		}
+
+		.grid {
+			display: grid;
+			grid-gap: 30px;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-auto-rows: 150px;
+			grid-auto-flow: row dense;
+		}
+
+		.grid--small {
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
+
+		.item {
+			position: relative;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-pack: end;
+			-ms-flex-pack: end;
+			justify-content: flex-end;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			background: #0c9a9a;
+			color: #fff;
+			grid-column-start: auto;
+			grid-row-start: auto;
+			background-color: teal;
+			background-size: cover;
+			background-position: center;
+			-webkit-box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+			box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+			-webkit-transition: -webkit-transform 0.3s ease-in-out;
+			transition: -webkit-transform 0.3s ease-in-out;
+			transition: transform 0.3s ease-in-out;
+			transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+			cursor: pointer;
+			counter-increment: item-counter;
+		}
+
+		.item:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			opacity: 0.3;
+			-webkit-transition: opacity 0.3s ease-in-out;
+			transition: opacity 0.3s ease-in-out;
+		}
+
+		.item:hover {
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+
+		.item:hover:after {
+			opacity: 0;
+		}
+
+		.item--small {
+			grid-row-end: span 1;
+		}
+
+		.item--medium {
+			grid-row-end: span 2;
+		}
+
+		.item--large {
+			grid-row-end: span 3;
+		}
+
+		.item--full {
+			grid-column-end: auto;
+		}
+
+		@media screen and (min-width: 768px) {
+			.item--full {
+				grid-column: 1/-1;
+				grid-row-end: span 2;
+			}
+		}
+
+		.item__details {
+			position: relative;
+			z-index: 1;
+			padding: 15px;
+			/*color: #444;
+  background: #fff;*/
+			text-transform: lowercase;
+			letter-spacing: 1px;
+			/*color: #828282;*/
+			color: #FFF;
+			font-size: 1.25em;
+		}
+
+		.item__details:before {
+			/*content: counter(item-counter);*/
+			font-weight: bold;
+			font-size: 1.1rem;
+			padding-right: 0.5em;
+			color: #444;
+		}
+
+		.thumbnail {
+			max-width: 40%;
+		}
+
+		/* ---------------------------------------------------
+|   Additional Magnific-Popup                         |
+|   Original: https://codepen.io/dimsemenov/pen/zjtbr |
+|             https://codepen.io/dimsemenov/pen/GtjBb |
+ -------------------------------------------------- */
+		/* Override */
+		.mfp-title {
+			position: absolute;
+			font-size: 1em;
+			margin: 5px;
+			font-weight: 600;
+		}
+
+		.custom-popup-class .mfp-container {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+
+		.custom-popup-class .mfp-content {
+			width: 100%;
+			max-width: 900px;
+			height: 80%;
+		}
+
+		.popup-iframe {
+			width: 100%;
+			height: 0;
+			overflow: hidden;
+			/* This is scale ratio */
+			padding-top: 56.25%;
+		}
+
+		.popup-iframe .mfp-close {
+			color: #FFF;
+			text-align: right;
+			right: 1px;
+			top: -44px;
+		}
+
+		.iframe-element {
+			background: #EBE8E8;
+			position: absolute;
+			top: -3px;
+			left: 0;
+			width: 100%;
+			height: auto;
+			box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+		}
+
+		.written {
+			overflow-y: scroll;
+			padding: 25px;
+			height: 100%;
+		}
+
+
+		/* --------------------
+|   Thumbnail Images   |
+ -------------------- */
+
+		.image-1 {
+			background-image: url("https://images.pexels.com/photos/268261/pexels-photo-268261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+		}
+
+		.image-2 {
+			background-image: url("https://images.pexels.com/photos/93052/pexels-photo-93052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+		}
+
+		.image-3 {
+			background-image: url("https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+		}
+
+		.image-4 {
+			background-image: url("https://images.pexels.com/photos/934059/pexels-photo-934059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+		}
+
+		.image-5 {
+			background-image: url("https://images.pexels.com/photos/395132/pexels-photo-395132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+		}
+	</style>
+
+</head>
+
+<body>
+	<!--HEADER-->
+	<header>
+		<div class="header">
+			<section>
+				<span><a href="emailto:albertinejaphet@gmail.com"><i class="fa fa-envelope"></i>
+						albertinejapheth@gmail.com</a></span>
+				<span><a href="tel:"><i class="fa fa-phone"></i> (+237) 670 81 09 95</a></span>
+			</section>
+			<section>
+				<span><a
+						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
+							class="fa fa-facebook"></i></a></span>
+				<span><a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
+							class="fa fa-instagram"></i></a></span>
+				<span><a href="tell:+237 679243380"><i class="fa fa-whatsapp"></i></a></span>
+			</section>
+		</div>
+	</header>
+
+	<!-- header ID section TOP NAVIGATION-->
+	<nav id="header">
+		<div class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<!-- <a href="cars.html">Cars</a> -->
+			<a href="snacks.html">Food Items</a>
+			<a href="building.html">contruction</a>
+			<a href="Non-food.html">Non-food items</a>
+			<a href="chairs.html">Office Equipment</a>
+			<a href="tell:+237 679243380">Contact</a>
+			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
+		</div>
+	</nav>
+
+	<!--=======================  PRODUCT SECTION SECTION4 ==========================-->
+
+
+	<!-- Not Supported -->
+	<div class="message">
+		Sorry, your browser does not support CSS Grid.
+	</div>
+
+	<section id="nature-gallery">
+		<div class="grid grid--small">
+
+			<a href="https://images.pexels.com/photos/268261/pexels-photo-268261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+				title="Title for Image 1" class="magnific-image item item--small image-1">
+				<div class="item__details">
+					<!--First Item--><i class="fa fa-camera" aria-hidden="true"></i>
+				</div>
+			</a>
+
+			<a href="https://images.pexels.com/photos/93052/pexels-photo-93052.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+				title="Title for Image 2" class="magnific-image item item--small image-2">
+				<div class="item__details">
+					<!--Second Item--><i class="fa fa-camera" aria-hidden="true"></i>
+				</div>
+			</a>
+
+			<a href="https://vimeo.com/210558372" title="Sunset View From Up Above"
+				class="magnific-vimeo cap-video item item--small image-3">
+				<div class="item__details">
+					<!--Third Item--><i class="fa fa-video-camera" aria-hidden="true"></i>
+				</div>
+			</a>
+		</div>
+
+		<!-- <div style="margin-bottom: 3rem;"></div> -->
+
+	</section>
+
+
+
+	<script>
+		// Window: https://codepen.io/harconst/pen/ogmOZm
+		$('.magnific-image').magnificPopup({
+			type: 'image',
+			removalDelay: 300,
+			mainClass: 'mfp-fade'
+		});
+
+		$('.magnific-youtube, .magnific-vimeo, .magnific-audio, .magnific-written').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 300,
+			preloader: false,
+			fixedContentPos: false,
+		});
+
+
+
+		// Caption Video/Audio: https://codepen.io/dimsemenov/pen/zjtbr
+		$('.magnific-youtube, .magnific-vimeo').magnificPopup({
+			type: 'iframe',
+
+			iframe: {
+				markup: '<div class="mfp-iframe-scaler">' +
+					'<div class="mfp-close"></div>' +
+					'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+					'<div class="mfp-title">Some caption</div>' +
+					'</div>'
+			},
+			callbacks: {
+				markupParse: function (template, values, item) {
+					values.title = item.el.attr('title');
+				}
+			}
+
+		});
+
+
+		// Iframe popups: https://codepen.io/dimsemenov/pen/GtjBb
+		$('.open-popup-link').magnificPopup({
+			type: 'inline',
+			midClick: true,
+			mainClass: 'custom-popup-class'
+			// Optionally pass markup without attaching it to DOM
+			/*items: {
+			  src: '<div id="popup-with-something" class="mfp-hide"><div class="some-element">Instead of this element you may put anything else and it\'ll scale proportionally (e.g. flash embed object or your custom video player) </div></div>'
+			}*/
+		});
+
+	</script>
+
+	<!--======================= FOOTER =======================-->
+	<footer>
+		<div class="middle_section">
+			<section>
+				<span>Visit our social media Handles</span>
+
+				<span>
+					<a
+						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
+							target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
+						target="_blank"><i class="fa fa-instagram"></i></a>
+					<a href="tel:+237 679 24 33 80" target="_blank"><i class="fa fa-whatsapp"></i></a>
+				</span>
+				<!-- <span>
+					<a href="tel:+237 679 24 33 80"> Contact Us With Just a Click</a>
+				</span> -->
+			</section>
+		</div>
+		<div class="bottom_section">
+			<span>B.J.C LTD.</span>
+		</div>
+	</footer>
+
+
+	<!--JAVASCRIPT-->
+	<script type="text/javascript" src="index.js">
+
+	</script>
+
+	<!-- Bootstrap's Javascript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
