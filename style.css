@@ -7,7 +7,7 @@
     box-sizing: border-box;
     }
 
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
     height: 12px;
     width: 8px;
     background: #000;
@@ -19,8 +19,9 @@
     ::-webkit-scrollbar-corner {
     background: #000;
     }
-    
-    
+     */
+
+    /* =================================================== */
     /*====================== DEFAULT=======================*/
     body{
     margin:0;
@@ -46,7 +47,7 @@
     border:0;
     }
     
-    a, button, input, textarea, select{
+    a, button, select{
     outline:none !important;
     }
     
@@ -164,6 +165,7 @@
     .btn1,.btn2{
     padding:10px 15px;
     width:150px;
+    font-size: 20px;
     }
     .title_header{
     width:100%;
@@ -504,10 +506,7 @@
     
     
     
-    
-
-    
-    
+    /* ==================================================================== */
     /*========================== section1.section1 =========================*/
     .section1{
     align-items:top;
@@ -533,7 +532,6 @@
     
     .section1 section{
     width:100%;
-
     }
     
     .section1 .cards {
@@ -641,7 +639,6 @@
     font-size: 0.8em;
     }
 
-
     .section1 .card:nth-child(2) .card-label {
     background: #ef4e7b;
     }
@@ -673,11 +670,12 @@
     grid-gap: 1em 0em;
     grid-template-areas: "a" "b" "c" "d" "e";
     width: 100%;
+    font-size: 20px;
     }
     }
     
     
-    
+    /* ==================================== */
     /*================ FOOTER ==============*/
     footer{
     width:100%;
@@ -742,9 +740,8 @@
     }
     
     footer .bottom_section{
-    
     text-align:center;
-    font-size:13px;
+    font-size:15px;
     padding:1rem 0;
     }
     
