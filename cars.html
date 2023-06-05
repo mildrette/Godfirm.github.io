@@ -10,80 +10,128 @@
 		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-
 	<style>
-		h1 {
-			font-family: Satisfy;
-			font-size: 50px;
-			text-align: center;
-			color: black;
-			padding: 1%;
-		}
+		#myImg {
 
-		#gallery {
-			-webkit-column-count: 4;
-			-moz-column-count: 4;
-			column-count: 4;
-
-			-webkit-column-gap: 20px;
-			-moz-column-gap: 20px;
-			column-gap: 20px;
-		}
-
-		@media (max-width:1200px) {
-			#gallery {
-				-webkit-column-count: 3;
-				-moz-column-count: 3;
-				column-count: 3;
-
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
-
-		@media (max-width:800px) {
-			#gallery {
-				-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
-
-		@media (max-width:600px) {
-			#gallery {
-				-webkit-column-count: 1;
-				-moz-column-count: 1;
-				column-count: 1;
-			}
-		}
-
-		#gallery img,
-		#gallery video {
-			width: 100%;
-			height: auto;
-			margin: 4% auto;
-			box-shadow: -3px 5px 15px #000;
+			border-radius: 5px;
 			cursor: pointer;
-			-webkit-transition: all 0.2s;
-			transition: all 0.2s;
+			transition: 0.3s;
 		}
 
-		.modal-img,
-		.model-vid {
-			width: 100%;
-			height: auto;
+		#myImg:hover {
+			opacity: 0.7;
 		}
 
-		.modal-body {
-			padding: 0px;
+
+		#myImg2 {
+
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		#myImg2:hover {
+			opacity: 0.7;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			padding-top: 100px;
+			/* Location of the box */
+			left: 0;
+			top: 0;
+			width: 10%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.9);
+			/* Black w/ opacity */
+		}
+
+		/* Modal Content (image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80;
+			max-width: 70px;
+		}
+
+		/* Caption of Modal Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80;
+			max-width: 70px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+
+		/* Add Animation */
+		.modal-content,
+		#caption {
+			-webkit-animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and(max-width: 70px) {
+			.modal-content {
+				width: 10%;
+			}
 		}
 	</style>
-
 </head>
 
 <body>
@@ -116,8 +164,6 @@
 			<a href="Non-food.html">Non-food items</a>
 			<a href="chairs.html">Office Equipment</a>
 			<a href="tell:+237 679243380">Contact</a>
-
-
 			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
 		</div>
 	</nav>
@@ -125,55 +171,70 @@
 	<!--=======================  PRODUCT SECTION SECTION4 ==========================-->
 	<div id="services" class="section1">
 		<div class="title_header">
-			<h1 class="title inline-photo2 show-on-scroll2"><em>Items and Equiptment Availble</em></h1>
-			<h3>With Us, the limit is your imaginations. take a look at our services below.</h3>
+			<h1 class="title inline-photo2 show-on-scroll2"><em>Cars on sell and on Rental availble</em></h1>
+			<h3>With Us, the limit is your imaginations.</h3>
 			<span class="border-shape"></span>
 		</div>
-		<hr>
-		<div id="gallery" class="container-fluid">
-			<img src="car/car.jpg" class="img-responsive">
-			<img src="car/car1.webp" class="img-responsive">
-			<img src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" class="img-responsive">
-			<img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive">
-			<img src="car/CARCAR.jpg" class="img-responsive">
-			<!-- <img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive"> -->
-			<img src="car/toyatacar.jpg" class="img-responsive">
-			<img src="car/CARS.jpg" class="img-responsive">
-			<!-- <img src="car/car.jpg" class="img-responsive"> -->
-			<img src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" class="img-responsive">
+		<!-- <hr> -->
+		<!-- <div id="gallery" class="container-fluid"> -->
+		<img id="myImg" src="car/car.jpg" class="img-fluid">
+		<img id="myImg" src="car/car1.webp" class="img-fluid">
+		<img id="myImg" src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" class="img-fluid">
+		<img id="myImg" src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-fluid">
+		<img id="myImg" src="car/CARCAR.jpg" class="img-fluid">
+		<img id="myImg" src="car/toyatacar.jpg" class="img-fluid">
+		<img id="myImg" src="car/CARS.jpg" class="img-fluid">
+		<img id="myImg" src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" class="img-fluid">
 
-		</div>
+		<div id="caption"></div>
+		<!-- </div> -->
 
-		<div id="myModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img id="modal-img" class="modal-content"
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS2ol73JZj6-IqypxPZXYS3rRiPwKteoD8vezk9QsRdkjt3jEn&usqp=CAU">
 
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-					</div>
-				</div>
 
-			</div>
+			<div id="caption"></div>
 		</div>
 
 
 
 
 		<script>
-			$(document).ready(function () {
-				$("img").click(function () {
-					var t = $(this).attr("src");
-					$(".modal-body").html("<img src='" + t + "' class='modal-img'>");
-					$("#myModal").modal();
-				});
 
-				$("video").click(function () {
-					var v = $("video > source");
-					var t = v.attr("src");
-					$(".modal-body").html("<video class='model-vid' controls><source src='" + t + "' type='video/mp4'></source></video>");
-					$("#myModal").modal();
-				});
-			});//EOF Document.ready
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			// var img = document.getElementById("myImg");
+			var modalImg = document.getElementById("modal-img");
+			var captionText = document.getElementById("caption");
+			// img.onclick = function(){
+			//   modal.style.display = "block";
+			//   modalImg.src = this.src;
+			//   captionText.innerHTML = this.alt;
+			// }
+
+
+			document.addEventListener("click", (e) => {
+				const elem = e.target;
+				if (elem.id === "myImg") {
+					modal.style.display = "block";
+					modalImg.src = elem.dataset.biggerSrc || elem.src;
+					captionText.innerHTML = elem.alt;
+				}
+			})
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			}
+
 		</script>
 
 		<!--======================= FOOTER =======================-->
@@ -202,7 +263,7 @@
 
 
 		<!--JAVASCRIPT-->
-		<script type="text/javascript" src="index.js"></script>
+		<!-- <script type="text/javascript" src="index.js"></script> -->
 
 		<!-- Bootstrap's Javascript -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
