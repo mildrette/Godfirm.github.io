@@ -10,6 +10,7 @@
 		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+
 	<style>
 		h1 {
 			font-family: Satisfy;
@@ -29,7 +30,7 @@
 			column-gap: 20px;
 		}
 
-		@media (max-width: 1200px) {
+		@media (max-width:1200px) {
 			#gallery {
 				-webkit-column-count: 3;
 				-moz-column-count: 3;
@@ -41,7 +42,7 @@
 			}
 		}
 
-		@media (max-width: 800px) {
+		@media (max-width:800px) {
 			#gallery {
 				-webkit-column-count: 2;
 				-moz-column-count: 2;
@@ -53,7 +54,7 @@
 			}
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width:600px) {
 			#gallery {
 				-webkit-column-count: 1;
 				-moz-column-count: 1;
@@ -82,6 +83,7 @@
 			padding: 0px;
 		}
 	</style>
+
 </head>
 
 <body>
@@ -108,12 +110,12 @@
 	<nav id="header">
 		<div class="topnav" id="myTopnav">
 			<a href="index.html">Home</a>
-			<!-- <a href="cars.html">Cars</a> -->
+			<a href="cars.html">Cars</a>
 			<a href="snacks.html">Food Items</a>
 			<a href="building.html">contruction</a>
 			<a href="Non-food.html">Non-food items</a>
-			<a href="chairs.html">Office Equipment</a>
 			<a href="tell:+237 679243380">Contact</a>
+
 			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
 		</div>
 	</nav>
@@ -121,22 +123,24 @@
 	<!--=======================  PRODUCT SECTION SECTION4 ==========================-->
 	<div id="services" class="section1">
 		<div class="title_header">
-			<h1 class="title inline-photo2 show-on-scroll2"><em>Cars on sell and on Rental availble</em></h1>
-			<h3>With Us, the limit is your imaginations.</h3>
+			<h1 class="title inline-photo2 show-on-scroll2"><em>Items and Equiptment Availble</em></h1>
+			<h3>With Us, the limit is your imaginations. take a look at our services below.</h3>
 			<span class="border-shape"></span>
 		</div>
+		<hr>
 		<div id="gallery" class="container-fluid">
-			<img src="https://source.unsplash.com/1600x1200?female,portrait" class="img-responsive">
-			<img id="myImg" src="car/car.jpg" class="img-fluid">
-			<img id="myImg" src="car/car1.webp" class="img-fluid">
-			<img id="myImg" src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" class="img-fluid">
-			<img id="myImg" src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-fluid">
-			<img id="myImg" src="car/CARCAR.jpg" class="img-fluid">
-			<img id="myImg" src="car/toyatacar.jpg" class="img-fluid">
-			<img id="myImg" src="car/CARS.jpg" class="img-fluid">
-			<img id="myImg" src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" class="img-fluid">
-		</div>
+			<img src="car/car.jpg" class="img-responsive">
+			<img src="car/car1.webp" class="img-responsive">
+			<img src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" class="img-responsive">
+			<img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive">
+			<img src="car/CARCAR.jpg" class="img-responsive">
+			<!-- <img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive"> -->
+			<img src="car/toyatacar.jpg" class="img-responsive">
+			<img src="car/CARS.jpg" class="img-responsive">
+			<!-- <img src="car/car.jpg" class="img-responsive"> -->
+			<img src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" class="img-responsive">
 
+		</div>
 
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -151,6 +155,24 @@
 		</div>
 
 
+
+
+		<script>
+			$(document).ready(function () {
+				$("img").click(function () {
+					var t = $(this).attr("src");
+					$(".modal-body").html("<img src='" + t + "' class='modal-img'>");
+					$("#myModal").modal();
+				});
+
+				$("video").click(function () {
+					var v = $("video > source");
+					var t = v.attr("src");
+					$(".modal-body").html("<video class='model-vid' controls><source src='" + t + "' type='video/mp4'></source></video>");
+					$("#myModal").modal();
+				});
+			});//EOF Document.ready
+		</script>
 
 		<!--======================= FOOTER =======================-->
 		<footer>
@@ -184,7 +206,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 			crossorigin="anonymous"></script>
-
+		<script src="index.js"></script>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
