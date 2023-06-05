@@ -396,11 +396,11 @@
     width:100%;
     }
     .banner section h2{
-    font-size:2em;
+    font-size:3em;
     }
     .banner section .cursive{
     font-size:2.3em;
-    line-height:2;
+    line-height:1;
     }
     .banner .btn1{
     margin:2vh 10px;
@@ -488,11 +488,11 @@
     
     .about-japhet .title{
     font-size:1.8em;
-    line-height: 2;
+    line-height: 1;
     }
     
     .about-japhet p{
-    font-size:18px;
+    font-size:20px;
     }
     .about-japhet .btn1{
       display:inline-block;
