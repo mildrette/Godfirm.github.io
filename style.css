@@ -576,7 +576,7 @@ p {
     }
     
     .banner section{
-    width:fit-content;
+    width:55%;
     text-align:center;
     }
     
@@ -598,13 +598,13 @@ p {
     @media (max-width:991px){
     .banner{
     width:100%;
-    padding:10px 0;
+    /* padding:10px 0; */
     }
     .banner section h2{
-    font-size:4em;
+    font-size:1.3em;
     }
     .banner section .cursive{
-    font-size:2em;
+    font-size:2.3em;
     line-height:1;
     }
     .banner .btn1{
@@ -736,16 +736,16 @@ p {
     padding:3rem;
     width:60%;
     font-family: "Roboto", sans-serif;
-    line-height: 3;
+    /* line-height: 3; */
     }
 
-    .section1 .title_header h3{
+    /* .section1 .title_header h3{
       font-family: "Roboto", sans-serif;
       word-spacing: 2;
       font-weight:200;
     line-height:1.6em;
     }
-    
+     */
     .section1 section{
     width:100%;
     }
@@ -764,9 +764,9 @@ p {
     width: 100%;
     position: relative;
     transition: all 0.25s ease;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-family: "Roboto", sans-serif;
-    font-weight: 800;
+    font-weight: 300;
     font-size: 20px;
     }
 
@@ -868,9 +868,9 @@ p {
     width: 100%;
     font-size: 18px;
     }
-    .section1 h3{
+    /* .section1 h3{
       font-size: 18px !important;
-    }
+    } */
     }
     
     
