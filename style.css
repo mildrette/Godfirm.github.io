@@ -1048,11 +1048,9 @@ footer {
   margin-bottom: 10px;
 }
 
-
-
   /* Adjust banner section */
   .banner section h1 {
-    font-size: 25px;
+    font-size: 30px !important;
     line-height: 1;
     padding: 2px 3px;
   }
@@ -1074,7 +1072,7 @@ footer {
     line-height: 1.5;
   }
 
-  .about-japhet p {
+  .about-japhet h3 {
     font-size: 16px;
   }
 
