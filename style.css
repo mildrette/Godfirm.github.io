@@ -548,7 +548,7 @@
       }
       
      
-  .section4 .card {
+  .section1 .card {
     width: 100%;
     position: relative;
     transition: all 0.25s ease;
@@ -556,16 +556,16 @@
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     }
-    .section4 .card:last-child {
+    .section1 .card:last-child {
     margin-bottom: 0;
     }
-    .section4 .card:before {
+    .section1 .card:before {
     height: 0;
     content: "";
     display: block;
     padding-bottom: 47.36%;
     }
-    .section4 .card.content:after {
+    .section1 .card.content:after {
     position: absolute;
     bottom: 0;
     left: 0;
