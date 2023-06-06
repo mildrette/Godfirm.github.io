@@ -10,7 +10,6 @@
 		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-
 	<style>
 		h1 {
 			font-family: Satisfy;
@@ -24,37 +23,34 @@
 			-webkit-column-count: 4;
 			-moz-column-count: 4;
 			column-count: 4;
-
 			-webkit-column-gap: 20px;
 			-moz-column-gap: 20px;
 			column-gap: 20px;
 		}
 
-		@media (max-width:1200px) {
+		@media (max-width: 1200px) {
 			#gallery {
 				-webkit-column-count: 3;
 				-moz-column-count: 3;
 				column-count: 3;
-
 				-webkit-column-gap: 20px;
 				-moz-column-gap: 20px;
 				column-gap: 20px;
 			}
 		}
 
-		@media (max-width:800px) {
+		@media (max-width: 800px) {
 			#gallery {
 				-webkit-column-count: 2;
 				-moz-column-count: 2;
 				column-count: 2;
-
 				-webkit-column-gap: 20px;
 				-moz-column-gap: 20px;
 				column-gap: 20px;
 			}
 		}
 
-		@media (max-width:600px) {
+		@media (max-width: 600px) {
 			#gallery {
 				-webkit-column-count: 1;
 				-moz-column-count: 1;
@@ -62,8 +58,7 @@
 			}
 		}
 
-		#gallery img,
-		#gallery video {
+		#gallery img {
 			width: 100%;
 			height: auto;
 			margin: 4% auto;
@@ -73,17 +68,56 @@
 			transition: all 0.2s;
 		}
 
-		.modal-img,
-		.model-vid {
-			width: 100%;
-			height: auto;
+		@media (hover: hover) and (pointer: fine) {
+			#gallery img:hover {
+				transform: scale(1.05);
+				/* Add a hover effect on desktop devices */
+			}
 		}
 
-		.modal-body {
-			padding: 0px;
+		@media (hover: none) and (pointer: coarse) {
+			#gallery img:hover {
+				transform: none;
+				/* Remove hover effect on mobile devices */
+			}
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.modal-content {
+			margin: 10% auto;
+			max-width: 600px;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
 		}
 	</style>
-
 </head>
 
 <body>
@@ -110,113 +144,73 @@
 	<nav id="header">
 		<div class="topnav" id="myTopnav">
 			<a href="index.html">Home</a>
-			<a href="cars.html">Cars</a>
+			<!-- <a href="cars.html">Cars</a> -->
 			<a href="snacks.html">Food Items</a>
 			<a href="building.html">contruction</a>
 			<a href="Non-food.html">Non-food items</a>
+			<a href="chairs.html">Office Equipment</a>
 			<a href="tell:+237 679243380">Contact</a>
-
 			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
 		</div>
 	</nav>
 
-	<!--=======================  PRODUCT SECTION SECTION4 ==========================-->
-	<div id="services" class="section1">
-		<div class="title_header">
-			<h1 class="title inline-photo2 show-on-scroll2"><em>Items and Equiptment Availble</em></h1>
-			<h3>With Us, the limit is your imaginations. take a look at our services below.</h3>
-			<span class="border-shape"></span>
-		</div>
-		<hr>
-		<div id="gallery" class="container-fluid">
-			<img src="car/car.jpg" class="img-responsive">
-			<img src="car/car1.webp" class="img-responsive">
-			<img src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" class="img-responsive">
-			<img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive">
-			<img src="car/CARCAR.jpg" class="img-responsive">
-			<!-- <img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" class="img-responsive"> -->
-			<img src="car/toyatacar.jpg" class="img-responsive">
-			<img src="car/CARS.jpg" class="img-responsive">
-			<!-- <img src="car/car.jpg" class="img-responsive"> -->
-			<img src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" class="img-responsive">
 
-		</div>
+	<div id="gallery">
+		<img src="car/car.jpg" alt="Image 1">
+		<img src="car/car1.webp" alt="Image 2">
+		<img src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" alt="Image 3">
+		<img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" alt="Image 4">
+		<img src="car/CARCAR.jpg" alt="Image 5">
+		<img src="car/CARS.jpg" alt="Image 6">
+		<img src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" alt="Image 7">
+		<img src="car/toyatacar.jpg" alt="Image 8">
+		<img src="car/car1.webp" alt="Image 9">
+		<!-- <img src="path_to_image_4.jpg" alt="Image 10">
+		<img src="path_to_image_4.jpg" alt="Image 11">
+		<img src="path_to_image_4.jpg" alt="Image 12"> -->
 
-		<div id="myModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
+		<!-- Add more image tags as needed -->
+	</div>
 
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-					</div>
-				</div>
+	<!-- Modal/Popup -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="modalImage" alt="Modal Image">
+	</div>
 
-			</div>
-		</div>
+	<script>
+		var modal = document.getElementById("myModal");
+		var modalImg = document.getElementById("modalImage");
 
+		var images = document.getElementsByTagName("img");
+		var modalClose = document.getElementsByClassName("close")[0];
 
+		// Attach click event listeners to each image
+		for (var i = 0; i < images.length; i++) {
+			images[i].addEventListener("click", openModal);
+		}
 
+		// Open the modal
+		function openModal() {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+		}
 
-		<script>
-			$(document).ready(function () {
-				$("img").click(function () {
-					var t = $(this).attr("src");
-					$(".modal-body").html("<img src='" + t + "' class='modal-img'>");
-					$("#myModal").modal();
-				});
+		// Close the modal when the close button is clicked
+		modalClose.addEventListener("click", closeModal);
 
-				$("video").click(function () {
-					var v = $("video > source");
-					var t = v.attr("src");
-					$(".modal-body").html("<video class='model-vid' controls><source src='" + t + "' type='video/mp4'></source></video>");
-					$("#myModal").modal();
-				});
-			});//EOF Document.ready
-		</script>
+		function closeModal() {
+			modal.style.display = "none";
+		}
 
-		<!--======================= FOOTER =======================-->
-		<footer>
-			<div class="middle_section">
-				<section>
-					<span>Visit our social media Handles</span>
-
-					<span>
-						<a
-							href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
-								target="_blank"><i class="fa fa-facebook"></i></a>
-						<a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
-							target="_blank"><i class="fa fa-instagram"></i></a>
-						<a href="tel:+237 679 24 33 80" target="_blank"><i class="fa fa-whatsapp"></i></a>
-					</span>
-					<!-- <span>
-					<a href="tel:+237 679 24 33 80"> Contact Us With Just a Click</a>
-				</span> -->
-				</section>
-			</div>
-			<div class="bottom_section">
-				<span>B.J.C LTD.</span>
-			</div>
-		</footer>
-
-
-		<!--JAVASCRIPT-->
-		<script type="text/javascript" src="index.js"></script>
-
-		<!-- Bootstrap's Javascript -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-			crossorigin="anonymous"></script>
-		<script src="index.js"></script>
-
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-			crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-			integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-			crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-			integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-			crossorigin="anonymous"></script>
+		// Close the modal when the user clicks outside of it
+		window.addEventListener("click", function (event) {
+			if (event.target == modal) {
+				closeModal();
+			}
+		});
+	</script>
+	<script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
