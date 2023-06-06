@@ -414,7 +414,7 @@
   font-size:1.3em;
   }
   .banner section .cursive{
-  font-size:80px !important;
+  font-size:50px !important;
   width: 100%;
   line-height: 1;
   font-weight: 900 !important;
@@ -517,46 +517,6 @@
   }
    
   
-  
-  
-  
-  
-  /*SECTION4*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    /* ==================================================================== */
     /*========================== section1.section1 =========================*/
     .section1{
@@ -705,7 +665,7 @@
       }
       }
 
-      
+
   /* .section4{
   align-items:top;
   padding:3rem;
