@@ -982,7 +982,7 @@ p {
 }
 
 h2{
-  font-size: 1.0.875rem;
+  font-size: 0.875rem;
 }
 
 header {
@@ -1019,9 +1019,9 @@ p {
   font-weight: 400;
 }
 
-.btn1, .btn2 {
+.btn1{
   display: inline-block;
-  background-color: #333;
+  background-color: #e30846;;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
