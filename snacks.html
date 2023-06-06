@@ -11,21 +11,79 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<style>
-		/* <!DOCTYPE html>
-<html lang="en">
+		h1 {
+			font-family: Satisfy;
+			font-size: 50px;
+			text-align: center;
+			color: black;
+			padding: 1%;
+		}
 
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+		#gallery {
+			-webkit-column-count: 4;
+			-moz-column-count: 4;
+			column-count: 4;
+			-webkit-column-gap: 20px;
+			-moz-column-gap: 20px;
+			column-gap: 20px;
+		}
 
-	<style> */
+		@media (max-width: 1200px) {
+			#gallery {
+				-webkit-column-count: 3;
+				-moz-column-count: 3;
+				column-count: 3;
+				-webkit-column-gap: 20px;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+			}
+		}
+
+		@media (max-width: 800px) {
+			#gallery {
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+				-webkit-column-gap: 20px;
+				-moz-column-gap: 20px;
+				column-gap: 20px;
+			}
+		}
+
+		@media (max-width: 600px) {
+			#gallery {
+				-webkit-column-count: 1;
+				-moz-column-count: 1;
+				column-count: 1;
+			}
+		}
+
+		#gallery img {
+			width: 100%;
+			height: auto;
+			margin: 4% auto;
+			box-shadow: -3px 5px 15px #000;
+			cursor: pointer;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			#gallery img:hover {
+				transform: scale(1.05);
+				/* Add a hover effect on desktop devices */
+			}
+		}
+
+		@media (hover: none) and (pointer: coarse) {
+			#gallery img:hover {
+				transform: none;
+				/* Remove hover effect on mobile devices */
+			}
+		}
+
 		.modal {
 			display: none;
-			/* Hide the modal by default */
 			position: fixed;
 			z-index: 9999;
 			left: 0;
@@ -34,7 +92,6 @@
 			height: 100%;
 			overflow: auto;
 			background-color: rgba(0, 0, 0, 0.7);
-			/* Add a semi-transparent black background */
 		}
 
 		.modal-content {
@@ -60,6 +117,111 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+
+
+
+		/* ::::::::::::::::::::::::::::::::::::: */
+		/* ::::::::::: MODAL IMAGE :::::::::::: */
+		/* ::::::::::::::::::::::::::::::::::::: */
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			padding-top: 20px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: auto;
+			max-width: 90%;
+			max-height: 90%;
+			position: relative;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+
+		.modal-content img {
+			width: 100%;
+			height: auto;
+		}
+
+		.modal-content .close {
+			position: absolute;
+			top: 10px;
+			right: 20px;
+			color: white;
+			font-size: 30px;
+			font-weight: bold;
+			transition: 0.3s;
+			cursor: pointer;
+		}
+
+		.modal-content .close:hover {
+			color: #bbb;
+		}
+
+
+
+
+
+		/* ::::::::::::::::::::::::::::::::::::: */
+		/* ::::::::::: MODAL IMAGE :::::::::::: */
+		/* ::::::::::::::::::::::::::::::::::::: */
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			padding-top: 20px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: auto;
+			max-width: 90%;
+			max-height: 90%;
+			position: relative;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+
+		.modal-content img {
+			width: 100%;
+			height: auto;
+		}
+
+		.modal-content .close {
+			position: absolute;
+			top: 50%;
+			right: -30px;
+			color: white;
+			font-size: 30px;
+			font-weight: bold;
+			transition: 0.3s;
+			cursor: pointer;
+			transform: translateY(-50%);
+		}
+
+		.modal-content .close:hover {
+			color: #bbb;
+		}
 	</style>
 </head>
 
@@ -73,82 +235,124 @@
 				<span><a href="tel:"><i class="fa fa-phone"></i> (+237) 670 81 09 95</a></span>
 			</section>
 			<section>
-				<span><a href="https://www.facebook.com/people/Blessed-Wedding-Photography/100005812391523"><i
+				<span><a
+						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
 							class="fa fa-facebook"></i></a></span>
-				<span><a href="https://www.instagram.com/blessedweddingphotography/"><i
+				<span><a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
 							class="fa fa-instagram"></i></a></span>
+				<span><a href="tell:+237 679243380"><i class="fa fa-whatsapp"></i></a></span>
 			</section>
 		</div>
-		<nav>
-			<div class="nav">
-				<a href="#">Home</a>
-				<a href="#about">About</a>
-				<a href="#services">Services</a>
-				<a href="#food">Gallery</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</nav>
 	</header>
 
-	<!--GALLERY-->
-	<section id="food">
-		<div class="image">
-			<img src="images/food/1.jpg" alt="">
+	<!-- header ID section TOP NAVIGATION-->
+	<nav id="header">
+		<div class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<!-- <a href="cars.html">Cars</a> -->
+			<a href="snacks.html">Food Items</a>
+			<a href="building.html">contruction</a>
+			<a href="Non-food.html">Non-food items</a>
+			<a href="chairs.html">Office Equipment</a>
+			<a href="tell:+237 679243380">Contact</a>
+			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
 		</div>
-		<div class="image">
-			<img src="images/food/2.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/3.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/4.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/5.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/6.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/7.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/8.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="images/food/9.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="food/10.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="food/11.jpg" alt="">
-		</div>
-		<div class="image">
-			<img src="food/12.jpg" alt="">
-		</div>
-	</section>
+	</nav>
 
-	<!--MODAL-->
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<div class="modal-content">
-			<div class="modal-body"></div>
-		</div>
+
+	<div id="gallery">
+		<img src="food/46.jpg" class="img-responsive">
+		<img src="food/47.webp" class="img-responsive">
+		<img src="food/49.avif" class="img-responsive">
+		<img src="food/50.webp" class="img-responsive">
+		<img src="food/51.webp" class="img-responsive">
+		<img src="food/52.webp" class="img-responsive">
+		<img src="food/1.jpeg" class="img-responsive">
+		<img src="food/2.jpg" class="img-responsive">
+		<img src="food/3.jpg" class="img-responsive">
+		<img src="food/4.png" class="img-responsive">
+		<img src="food/5.jpeg" class="img-responsive">
+		<img src="food/6.jpg" class="img-responsive">
+		<img src="food/7.jpg" class="img-responsive">
+		<img src="food/8.jpg" class="img-responsive">
+		<img src="food/10.jpg" class="img-responsive">
+		<img src="food/11.jpeg" class="img-responsive">
+		<img src="food/12.jpg" class="img-responsive">
+		<img src="food/13.png" class="img-responsive">
+		<img src="food/14.png" class="img-responsive">
+		<img src="food/15.jpg" class="img-responsive">
+		<img src="food/16.jpeg" class="img-responsive">
+		<img src="food/17.jpg" class="img-responsive">
+		<img src="food/18.jpeg" class="img-responsive">
+		<img src="food/19.jpg" class="img-responsive">
+		<img src="food/21.jpg" class="img-responsive">
+		<img src="food/22.jpg" class="img-responsive">
+		<img src="food/23.jpg" class="img-responsive">
+		<img src="food/24.jpg" class="img-responsive">
+		<img src="food/25.jpg" class="img-responsive">
+		<img src="food/26.jpg" class="img-responsive">
+		<img src="food/27.jpeg" class="img-responsive">
+		<img src="food/28.jpeg" class="img-responsive">
+		<img src="food/29.jpg" class="img-responsive">
+		<img src="food/30.jpg" class="img-responsive">
+		<img src="food/31.jpeg" class="img-responsive">
+		<img src="food/32.jpeg" class="img-responsive">
+		<img src="food/33.jpeg" class="img-responsive">
+		<img src="food/34.jpeg" class="img-responsive">
+		<img src="food/35.png" class=" img-responsive">
+		<img src="food/36.jpeg" class="img-responsive">
+		<img src="food/37.jpeg" class="img-responsive">
+		<img src="food/38.jpeg" class="img-responsive">
+		<img src="food/39.png" class="img-responsive">
+		<img src="food/40.jpg" class="img-responsive">
+		<img src="food/41.jpeg" class="img-responsive">
+		<img src="food/42.jpeg" class="img-responsive">
+		<img src="food/43.jpeg" class="img-responsive">
+		<img src="food/44.jpg" class="img-responsive">
+		<img src="food/45.webp" class="img-responsive">
+
+
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.min.js"></script>
+	<!-- Modal/Popup -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="modalImage" alt="Modal Image">
+	</div>
+
 	<script>
-		$(document).ready(function () {
-			$("img").click(function () {
-				var t = $(this).attr("src");
-				$(".modal-body").html("<img src='" + t + "' class='modal-img'>");
-				$("#myModal").modal();
-			});
+		var modal = document.getElementById("myModal");
+		var modalImg = document.getElementById("modalImage");
+
+		var images = document.getElementsByTagName("img");
+		var modalClose = document.getElementsByClassName("close")[0];
+
+		// Attach click event listeners to each image
+		for (var i = 0; i < images.length; i++) {
+			images[i].addEventListener("click", openModal);
+		}
+
+		// Open the modal
+		function openModal() {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+		}
+
+		// Close the modal when the close button is clicked
+		modalClose.addEventListener("click", closeModal);
+
+		function closeModal() {
+			modal.style.display = "none";
+		}
+
+		// Close the modal when the user clicks outside of it
+		window.addEventListener("click", function (event) {
+			if (event.target == modal) {
+				closeModal();
+			}
 		});
 	</script>
+	<script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>

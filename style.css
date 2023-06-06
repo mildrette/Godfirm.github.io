@@ -702,12 +702,12 @@ p {
     }
     
     .about-japhet section:nth-child(2){
-    padding:4rem 1rem;
+    padding:1rem 1rem;
     }
     
     .about-japhet .title{
     font-size:1.8em;
-    line-height: 2;
+    line-height: 1;
     }
     
     .about-japhet p{
@@ -715,7 +715,7 @@ p {
     }
     .about-japhet .btn1{
       display:inline-block;
-      margin:1vh 20px;
+      margin:1vh 10px;
       font-size: 10px;
       }
     }
@@ -866,7 +866,10 @@ p {
     grid-gap: 1em 0em;
     grid-template-areas: "a" "b" "c" "d" "e";
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
+    }
+    .section1 h3{
+      font-size: 18px !important;
     }
     }
     
@@ -980,7 +983,7 @@ p {
     font-size: 0.875rem;
 }
 
-h2{
+h2, h3{
   font-size: 0.875rem;
 }
 
