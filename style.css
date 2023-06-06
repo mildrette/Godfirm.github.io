@@ -765,7 +765,7 @@
    padding-top: 5px;
   }
 
-  .banner h2, .header {
+  .banner h2, .header .btn1, .btn2 {
     font-size: 30px !important;
     font-weight: 500;
     line-height: 2 !important;
