@@ -758,17 +758,18 @@
     font-size: 30px;
     font-weight: 500;
   }
-  #header, .banner, #about, footer {
+  #header, .header .banner, #about, footer {
     height: 800px;
    padding-bottom: 0;
    padding-top: 5px;
   }
 
-  .banner h2 {
+  .banner h2, .header {
     font-size: 30px !important;
     font-weight: 500;
     line-height: 2 !important;
    }
+
    .banner .cursive{
     font-size: 50px !important;
     font-weight: 600;
