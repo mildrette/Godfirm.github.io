@@ -754,7 +754,10 @@
 
      /* =========== Media Queries ================= */
   @media only screen and (max-width: 768px) {
-  
+  body{
+    font-size: 30px;
+    font-weight: 500;
+  }
   #header, .banner, #about, footer {
     height: 800px;
    padding-bottom: 0;
