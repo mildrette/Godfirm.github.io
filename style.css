@@ -598,14 +598,14 @@ p {
     @media (max-width:991px){
     .banner{
     width:100%;
-    padding: 50px 0 50px 0;
+    padding:10px 0;
     }
     .banner section h2{
     font-size:4em;
     }
     .banner section .cursive{
-    font-size:2.3em;
-    line-height:2;
+    font-size:2em;
+    line-height:1;
     }
     .banner .btn1{
     margin:2vh 10px;
@@ -616,14 +616,13 @@ p {
     @media (max-width: 768px) {
       .banner  section h1 {
         font-size: 25px;
-        line-height: 1px;
-        padding: 2px 3px;
+        padding: 1px 2px;
       }
     
       .banner section h2 {
-        font-size: 18px;
-        line-height: 5px;
-        padding: 10px 0 10px 0;
+        font-size: 20px;
+        line-height: 1;
+        padding: 5px 0 5px 0;
       }
     }
   
@@ -988,6 +987,11 @@ h2{
 header {
   padding: 2px;
   text-align: center;
+  font-size: 20px;
+}
+
+.banner{
+  height: 90vh;
   font-size: 20px;
 }
 
