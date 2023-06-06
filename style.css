@@ -20,8 +20,7 @@
     background: #000;
     }
      
-
-
+    
 
 /* ::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::: DEFAULT ::::::::::::: */
@@ -793,26 +792,6 @@ p {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
     }
 
-    /* .section1 .card:nth-child(1) {
-    grid-area: a;
-    }
-
-    .section1 .card:nth-child(2) {
-    grid-area: b;
-    }
-
-    .section1 .card:nth-child(3) {
-    grid-area: c;
-    }
-
-    .section1 .card:nth-child(4) {
-    grid-area: d;
-    }
-
-    .section1 .card:nth-child(5) {
-      grid-area: e;
-      } */
-
     .section1 .card-content{
     position: absolute;
     top: 0;
@@ -991,6 +970,64 @@ p {
     font-size: 14px;
     line-height: 1.6em;
   }
+
+header {
+  padding: 2px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #f6f5f5;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+p {
+  color: #eae4e4;
+  font-weight: 400;
+}
+
+.btn1, .btn2 {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+footer {
+    background-color: #061221;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.border-shape {
+  border-top: 1px solid #fff;
+  margin-bottom: 10px;
+}
+
+
 
   /* Adjust banner section */
   .banner section h1 {
