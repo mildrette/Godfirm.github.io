@@ -766,14 +766,14 @@
     font-weight: 500;
     line-height: 2 !important;
    }
-   .banner h1 {
+   .banner .cursive{
     font-size: 50px !important;
     font-weight: 600;
     line-height: 1 !important;
    }
 
   .header .topnav {
-    font-size: 4rem !important;
+    font-size: 10px !important;
   }
 
   #footer {
@@ -782,7 +782,7 @@
 
   .btn1{
     font-size: 20px !important;
-    
+
   }
 }
 
