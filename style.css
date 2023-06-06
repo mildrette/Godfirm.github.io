@@ -767,16 +767,13 @@
     line-height: 2 !important;
    }
    .banner h1 {
-    font-size: 40px !important;
-    font-weight: 500;
+    font-size: 50px !important;
+    font-weight: 600;
     line-height: 1 !important;
    }
 
-  .card {
-    margin: 20px 0;
-  }
-  .header-info {
-    font-size: 2rem;
+  .header .topnav {
+    font-size: 4rem !important;
   }
   .btn-outline-light {
     margin-left: 0px;
