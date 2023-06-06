@@ -758,7 +758,8 @@
     font-size: 30px;
     font-weight: 500;
   }
-  #header, .header .banner, #about, footer {
+  #header, .header .banner, #about, #services,
+  footer {
     height: 800px;
    padding-bottom: 0;
    padding-top: 5px;
