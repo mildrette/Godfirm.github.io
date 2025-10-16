@@ -618,7 +618,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .section-header p {
-  color: #555;
+  color: #010416;
   font-weight: 300;
   margin-top: 0.5rem;
 }
@@ -709,13 +709,6 @@ font-family: 'Poppins', sans-serif;
 .service-card:nth-child(3) .card-label { background-color: #1098ad; }
 .service-card:nth-child(4) .card-label { background-color: #ff9f1c; }
 
-
-
-
-      /******************================BANNER====================***********************/
-
-
-        /******************================BANNER====================***********************/
 
 
   /*================================CONTACT FORM=======================================*/
