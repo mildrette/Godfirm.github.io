@@ -28,7 +28,6 @@
   margin-bottom: 3rem;
 }
 
-/* CARD GRID */
 .about-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -70,7 +69,6 @@
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
-/* CONTACT INFO */
 .contact-info p {
   margin: 5px 0;
 }
@@ -84,7 +82,6 @@
   text-decoration: underline;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .about-title { font-size: 2rem; }
   .intro { font-size: 1rem; }
