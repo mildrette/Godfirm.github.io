@@ -1,380 +1,484 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-	<title>Blessed Japheht Company Ltd</title>
-	<!--META TAGS-->
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blessed Japheht Company Ltd — Gallery</title>
 
-	<!--FONT AWESOME-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-	<!--GOOGLE FONTS-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-		rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --muted: #556;
+      --accent: #1e88e5;
+      --accent-2: #0b7a6b;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 12px;
+      --maxw: 1200px;
+      --shadow: 0 8px 30px rgba(16,24,40,0.08);
+      font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
 
-	<!--STYLESHEET-->
-	<link rel="stylesheet" href="style.css">
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:var(--bg); color:#111}
+    a{color:inherit}
 
-	<style>
-		h1 {
-			font-family: Satisfy;
-			font-size: 50px;
-			text-align: center;
-			color: black;
-			padding: 1%;
-		}
+    /* HEADER / NAV */
+    header.topbar{
+      background: linear-gradient(90deg, #fff 0%, #f9fbff 100%);
+      border-bottom: 1px solid rgba(17,24,39,0.06);
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(6px);
+    }
+    .topbar .inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:14px 20px;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .brand .logo{
+      width:56px; height:56px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#6cc1ff);
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700; box-shadow:var(--shadow);
+      font-family:"Playfair Display", serif;
+    }
+    .brand h1{font-size:18px; margin:0; font-family:"Playfair Display", serif}
+    nav.mainnav{display:flex; gap:12px; align-items:center}
+    nav.mainnav a{padding:8px 12px; border-radius:8px; text-decoration:none; color:var(--muted); font-weight:600}
+    nav.mainnav a:hover{background:var(--glass); color:#0b1720}
 
-		#gallery {
-			-webkit-column-count: 4;
-			-moz-column-count: 4;
-			column-count: 4;
-			-webkit-column-gap: 20px;
-			-moz-column-gap: 20px;
-			column-gap: 20px;
-		}
+    /* mobile hamburger */
+    .hamburger{display:none; border:none; background:none; font-size:22px; color:var(--muted)}
+    @media (max-width:880px){
+      nav.mainnav{display:none}
+      .hamburger{display:block}
+    }
 
-		@media (max-width: 1200px) {
-			#gallery {
-				-webkit-column-count: 3;
-				-moz-column-count: 3;
-				column-count: 3;
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
+    /* HERO */
+    .hero{
+      max-width:var(--maxw);
+      margin:28px auto;
+      display:flex;
+      gap:28px;
+      align-items:center;
+      padding:18px;
+      flex-wrap:wrap;
+    }
+    .hero .hero-card{
+      flex:1 1 420px;
+      background:linear-gradient(180deg, #fff, #fbfdff);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .hero h2{font-family:"Playfair Display", serif; margin:0 0 12px; font-size:28px}
+    .hero p{margin:0 0 18px; color:var(--muted); line-height:1.6}
+    .hero .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-flex; gap:8px; align-items:center; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700}
+    .btn.primary{background:var(--accent); color:#fff}
+    .btn.ghost{background:transparent; border:1px solid rgba(17,24,39,0.06); color:var(--muted)}
 
-		@media (max-width: 800px) {
-			#gallery {
-				-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
+    .hero .media-preview{
+      flex:1 1 420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .preview-card{
+      width:100%;
+      max-width:520px;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 18px 50px rgba(10,20,30,0.08);
+    }
+    .preview-card img{width:100%; display:block}
 
-		@media (max-width: 600px) {
-			#gallery {
-				-webkit-column-count: 1;
-				-moz-column-count: 1;
-				column-count: 1;
-			}
-		}
+    /* ABOUT */
+    .about{
+      max-width:var(--maxw); margin:12px auto; padding:18px; display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+    }
+    .about .col{flex:1 1 420px; background:var(--card); padding:20px; border-radius:12px; box-shadow:var(--shadow)}
+    .about h3{margin-top:0; font-family:"Playfair Display", serif}
+    .about p{color:var(--muted); line-height:1.6}
 
-		#gallery img {
-			width: 100%;
-			height: auto;
-			margin: 4% auto;
-			box-shadow: -3px 5px 15px #000;
-			cursor: pointer;
-			-webkit-transition: all 0.2s;
-			transition: all 0.2s;
-		}
+    /* GALLERY */
+    .gallery {
+      max-width:var(--maxw);
+      margin:28px auto;
+      padding:18px;
+    }
+    .gallery-header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px}
+    .gallery-header h3{margin:0; font-family:"Playfair Display", serif}
+    .gallery-grid {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
 
-		@media (hover: hover) and (pointer: fine) {
-			#gallery img:hover {
-				transform: scale(1.05);
-				/* Add a hover effect on desktop devices */
-			}
-		}
+    /* responsive columns */
+    @media (max-width:1200px){ .gallery-grid{ grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width:880px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } .hero{padding:8px} }
+    @media (max-width:480px){ .gallery-grid{ grid-template-columns: 1fr; } .topbar .inner{padding:10px} }
 
-		@media (hover: none) and (pointer: coarse) {
-			#gallery img:hover {
-				transform: none;
-				/* Remove hover effect on mobile devices */
-			}
-		}
+    .tile{
+      background:linear-gradient(180deg,#fff,#fcfeff);
+      border-radius:12px;
+      overflow:hidden;
+      position:relative;
+      height:220px;
+      display:block;
+      box-shadow: 0 8px 24px rgba(10,20,30,0.06);
+      cursor:zoom-in;
+    }
+    .tile video, .tile img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    .tile .label{
+      position:absolute; left:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff;
+      padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700;
+      display:flex; gap:8px; align-items:center;
+    }
 
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 9999;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.7);
-		}
+    /* small variation sizes (optional) */
+    .tile.large{grid-row:span 2; height:460px}
+    .tile.land{grid-column:span 2}
 
-		.modal-content {
-			margin: 10% auto;
-			max-width: 600px;
-			background-color: #fff;
-			padding: 20px;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		}
+    /* hover effects for pointer devices */
+    @media (hover:hover) and (pointer:fine){
+      .tile:hover{transform:translateY(-6px); transition:transform .28s}
+      .tile:hover .tile-overlay{opacity:1}
+    }
 
-		.close {
-			color: #aaa;
-			float: right;
-			font-size: 28px;
-			font-weight: bold;
-			cursor: pointer;
-		}
+    /* Modal (lightbox) */
+    .lightbox {
+      position: fixed; inset:0; display:none; align-items:center; justify-content:center;
+      background: rgba(6,10,16,0.75); z-index:9999; padding:20px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox .content{
+      max-width: 1100px; width:100%; border-radius:12px; overflow:hidden; position:relative;
+      background:transparent;
+    }
+    .lightbox .content img, .lightbox .content video{
+      width:100%; height:calc(80vh); object-fit:contain; background:#000; display:block;
+    }
+    .lightbox .close{
+      position:absolute; right:12px; top:12px; background:rgba(255,255,255,0.08); color:#fff;
+      border:none; padding:10px; border-radius:10px; cursor:pointer; font-size:18px;
+    }
 
-		.close:hover,
-		.close:focus {
-			color: black;
-			text-decoration: none;
-			cursor: pointer;
-		}
+    /* FOOTER */
+    footer{
+      margin-top:28px; padding:28px 18px; background:#07102a; color:#dfefff;
+    }
+    footer .inner{max-width:var(--maxw); margin:0 auto; display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap}
+    footer .col{flex:1 1 260px}
+    footer a{color:inherit; text-decoration:none}
+    footer .brand-sm{display:flex; gap:12px; align-items:center}
+    footer .brand-sm .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6cc1ff); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700}
+    footer small{display:block; margin-top:12px; color:#bfcded}
 
-
-
-		/* ::::::::::::::::::::::::::::::::::::: */
-		/* ::::::::::: MODAL IMAGE :::::::::::: */
-		/* ::::::::::::::::::::::::::::::::::::: */
-
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 1;
-			padding-top: 20px;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-
-		.modal-content {
-			margin: auto;
-			display: block;
-			width: auto;
-			max-width: 90%;
-			max-height: 90%;
-			position: relative;
-			transform: translate(-50%, -50%);
-			top: 50%;
-			left: 50%;
-		}
-
-		.modal-content img {
-			width: 100%;
-			height: auto;
-		}
-
-		.modal-content .close {
-			position: absolute;
-			top: 10px;
-			right: 20px;
-			color: white;
-			font-size: 30px;
-			font-weight: bold;
-			transition: 0.3s;
-			cursor: pointer;
-		}
-
-		.modal-content .close:hover {
-			color: #bbb;
-		}
-
-
-
-
-
-
-		/* ::::::::::::::::::::::::::::::::::::: */
-		/* ::::::::::: MODAL IMAGE :::::::::::: */
-		/* ::::::::::::::::::::::::::::::::::::: */
-
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 1;
-			padding-top: 20px;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-
-		.modal-content {
-			margin: auto;
-			display: block;
-			width: auto;
-			max-width: 90%;
-			max-height: 90%;
-			position: relative;
-			transform: translate(-50%, -50%);
-			top: 50%;
-			left: 50%;
-		}
-
-		.modal-content img {
-			width: 100%;
-			height: auto;
-		}
-
-		.modal-content .close {
-			position: absolute;
-			top: 50%;
-			right: -30px;
-			color: white;
-			font-size: 30px;
-			font-weight: bold;
-			transition: 0.3s;
-			cursor: pointer;
-			transform: translateY(-50%);
-		}
-
-		.modal-content .close:hover {
-			color: #bbb;
-		}
-	</style>
+    /* utility */
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 18px}
+  </style>
 </head>
-
 <body>
-	<!--HEADER-->
-	<header>
-		<div class="header">
-			<section>
-				<span><a href="emailto:albertinejaphet@gmail.com"><i class="fa fa-envelope"></i>
-						albertinejapheth@gmail.com</a></span>
-				<span><a href="tel:"><i class="fa fa-phone"></i> (+237) 670 81 09 95</a></span>
-			</section>
-			<section>
-				<span><a
-						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
-							class="fa fa-facebook"></i></a></span>
-				<span><a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
-							class="fa fa-instagram"></i></a></span>
-				<span><a href="tell:+237 679243380"><i class="fa fa-whatsapp"></i></a></span>
-			</section>
-		</div>
-	</header>
 
-	<!-- header ID section TOP NAVIGATION-->
-	<nav id="header">
-		<div class="topnav" id="myTopnav">
-			<a href="index.html">Home</a>
-			<a href="cars.html">Cars</a>
-			<a href="snacks.html">Food Items</a>
-			<a href="building.html">contruction</a>
-			<a href="Non-food.html">Non-food items</a>
-			<!-- <a href="chairs.html">Office Equipment</a> -->
-			<a href="tel:+237 679 24 33 80">Contact Us</a>
-			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
-		</div>
-	</nav>
+  <!-- HEADER -->
+  <header class="topbar" role="banner">
+    <div class="inner">
+      <div class="brand">
+        <div class="logo">B</div>
+        <div>
+          <h1>Blessed Japheht Co. Ltd</h1>
+          <div style="font-size:12px;color:var(--muted)">Materials • Zinc • Construction supplies</div>
+        </div>
+      </div>
 
+      <nav class="mainnav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="building.html">Construction</a>
+        <a href="cars.html">Cars</a>
+        <a href="Non-food.html">Non-food</a>
+        <a href="tel:+237679243380">Contact</a>
+      </nav>
 
-	<div id="gallery">
-		<img src="chair/2xhome-Tan-Office-Chairs-Mid-Back-Ribbed-PU-Leather-Conference-Room-Home-Office-Boss-Chrome-With-Arms-Wheels-Work.webp"
-			class="img-responsive">
-		<img src="chair/Ace-breakout-chair-3-700x350.jpg" class="img-responsive">
-		<img src="chair/three-seater-chair-250x250.webp" class="img-responsive">
-		<img src="chair/wipro-box-office-chair-500x500.webp" class="img-responsive">
-		<img src="chair/Speed_Line_-_Madrid_Visitors-01_large.webp" class="img-responsive">
-		<img src="chair/Melton_Low_Back_Office_Chair_3_700x700.webp" class="img-responsive">
-		<img src="chair/s-l600.jpg" class="img-responsive">
-		<img src="chair/q-44-four-legs-base-version-meeting-room-chairs.jpg" class="img-responsive">
-		<img src="chair/Key_Meeting_Room_Chairs_with_4_Leg_Frame.jpg" class="img-responsive">
-		<img src="chair/IA_officeChairCompair_introxquesxwidxeqx1184.webp" class="img-responsive">
-		<img src="chair/Homall-Black-Business-Office-Chair-High-Back-Exectuive-Managerial-Deck-Chair-Adjustable.webp"
-			class="img-responsive">
-		<img src="chair/chair1.jpeg" class="img-responsive">
-		<img src="chair/chair2.jpg" class="img-responsive">
-		<img src="chair/chair3.jpg" class="img-responsive">
-		<img src="chair/chair4.jpeg" class="img-responsive">
-		<img src="chair/chair5.jpeg" class="img-responsive">
-		<img src="chair/Azure-Nienkamper-HSC-Chair-Specs-01.jpg" class="img-responsive">
-		<img src="chair/images.jpeg" class="img-responsive">
+      <button class="hamburger" aria-expanded="false" aria-label="Open menu" id="hambtn"><i class="fa fa-bars"></i></button>
+    </div>
+  </header>
 
-	</div>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" style="display:none; background:rgba(255,255,255,0.98); border-bottom:1px solid rgba(17,24,39,0.06);">
+    <div class="container" style="padding:10px 0; display:flex; flex-direction:column; gap:8px">
+      <a href="index.html">Home</a>
+      <a href="building.html">Construction</a>
+      <a href="cars.html">Cars</a>
+      <a href="Non-food.html">Non-food</a>
+      <a href="tel:+237679243380">Contact</a>
+    </div>
+  </div>
 
-	<!-- Modal/Popup -->
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="modalImage" alt="Modal Image">
-	</div>
+  <!-- HERO -->
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-card">
+      <h2 id="hero-title">High-quality zinc & construction materials — delivered locally</h2>
+      <p>We supply roofing, cladding, pipes, nails, tools and more — responsibly sourced and built to last. Browse our visual catalog below to see our products and on-site equipment.</p>
+      <div class="cta">
+        <a class="btn primary" href="#gallery"><i class="fa fa-eye"></i> View Gallery</a>
+        <a class="btn ghost" href="tel:+237679243380"><i class="fa fa-phone"></i> Call Us</a>
+      </div>
+    </div>
 
-	<script>
-		var modal = document.getElementById("myModal");
-		var modalImg = document.getElementById("modalImage");
+    <div class="media-preview">
+      <div class="preview-card" aria-hidden="true">
+        <img src="chair/zinc1.jpg" alt="zinc preview">
+      </div>
+    </div>
+  </section>
 
-		var images = document.getElementsByTagName("img");
-		var modalClose = document.getElementsByClassName("close")[0];
+  <!-- ABOUT -->
+  <section class="about container" id="about">
+    <div class="col">
+      <h3>Meet Blessed Japheht</h3>
+      <p>At God’s Firm Zinc Company we provide top-quality zinc products for roofing, cladding and infrastructure. We focus on durable materials and sustainable sourcing to support construction projects that stand the test of time.</p>
+      <p>Contact our team to get product specifications, custom orders and timely delivery.</p>
+    </div>
+    <div class="col">
+      <h3>Contact & Social</h3>
+      <p style="margin:0 0 8px"><strong>Email</strong> albertinejapheth@gmail.com</p>
+      <p style="margin:0 0 8px"><strong>Phone</strong> +237 679 24 33 80</p>
+      <div style="display:flex;gap:12px;margin-top:12px">
+        <a class="btn ghost" href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+        <a class="btn ghost" href="https://www.instagram.com/blessed_japhet_company_ltd/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </section>
 
-		// Attach click event listeners to each image
-		for (var i = 0; i < images.length; i++) {
-			images[i].addEventListener("click", openModal);
-		}
+  <!-- GALLERY -->
+  <section class="gallery container" id="gallery" aria-label="Media gallery">
+    <div class="gallery-header">
+      <h3>Products & Equipment</h3>
+      <div style="color:var(--muted)">Click any item to view fullscreen</div>
+    </div>
 
-		// Open the modal
-		function openModal() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
-		}
+    <div class="gallery-grid" id="grid">
 
-		// Close the modal when the close button is clicked
-		modalClose.addEventListener("click", closeModal);
+      <!-- Videos -->
+      <a class="tile" data-type="video" href="chair/1.mp4" title="Video 1">
+        <video src="chair/1.mp4" muted playsinline preload="metadata"></video>
+        <div class="label"><i class="fa fa-play"></i> Video</div>
+      </a>
 
-		function closeModal() {
-			modal.style.display = "none";
-		}
+      <a class="tile" data-type="video" href="chair/2.mp4" title="Video 2">
+        <video src="chair/2.mp4" muted playsinline preload="metadata"></video>
+        <div class="label"><i class="fa fa-play"></i> Video</div>
+      </a>
 
-		// Close the modal when the user clicks outside of it
-		window.addEventListener("click", function (event) {
-			if (event.target == modal) {
-				closeModal();
-			}
-		});
-	</script>
+      <a class="tile" data-type="video" href="chair/3.mp4" title="Video 3">
+        <video src="chair/3.mp4" muted playsinline preload="metadata"></video>
+        <div class="label"><i class="fa fa-play"></i> Video</div>
+      </a>
 
+      <a class="tile" data-type="video" href="chair/5.mp4" title="Video 4">
+        <video src="chair/5.mp4" muted playsinline preload="metadata"></video>
+        <div class="label"><i class="fa fa-play"></i> Video</div>
+      </a>
 
+      <a class="tile" data-type="video" href="chair/6.mp4" title="Video 5">
+        <video src="chair/6.mp4" muted playsinline preload="metadata"></video>
+        <div class="label"><i class="fa fa-play"></i> Video</div>
+      </a>
 
-	<!--FOOTER-->
-	<footer>
-		<div class="middle_section">
-			<section>
-				<span>Visit our social media Handles</span>
-				<span>
-					<a
-						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
-							target="_blank"><i class="fa fa-facebook"></i></a>
-					<a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
-						target="_blank"><i class="fa fa-instagram"></i></a>
-					<a href="https://wa.me/237679243380" target="_blank"><i class="fa fa-whatsapp"></i></a>
-				</span>
-				<span>
-					Old treasurystreet
-					Bamenda
-					Cameroon
-					<hr>
-					Get in Touch with Us:
-					<a href="tel:+237 679 24 33 80" target="_blank">+237 679 24 33 80</a>
-				</span>
-			</section>
-		</div>
-		<div class="bottom_section">
-			<span>B.J.C LTD.</span>
-		</div>
-	</footer>
+      <!-- Images: list all images you provided -->
+      <a class="tile" data-type="image" href="chair/baro.jpg" title="baro"><img src="chair/baro.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/cemet.jpg" title="cement"><img src="chair/cemet.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/circle.jpg" title="circle"><img src="chair/circle.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/eqpt.jpg" title="eqpt"><img src="chair/eqpt.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/equipment.jpg" title="equipment"><img src="chair/equipment.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/equipt.jpg" title="equipt"><img src="chair/equipt.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/equiptment.jpg" title="equiptment"><img src="chair/equiptment.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/equipts.jpg" title="equipts"><img src="chair/equipts.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/iron.jpg" title="iron"><img src="chair/iron.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/iron1.jpg" title="iron1"><img src="chair/iron1.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/nail.jpg" title="nail"><img src="chair/nail.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/nail1.jpg" title="nail1"><img src="chair/nail1.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/nails.jpg" title="nails"><img src="chair/nails.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/paint.jpg" title="paint"><img src="chair/paint.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/pipe.jpg" title="pipe"><img src="chair/pipe.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/pipe1.jpg" title="pipe1"><img src="chair/pipe1.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/pipe2.jpg" title="pipe2"><img src="chair/pipe2.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/pipe3.jpg" title="pipe3"><img src="chair/pipe3.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/pipe4.jpg" title="pipe4"><img src="chair/pipe4.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/roof.jpg" title="roof"><img src="chair/roof.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/sand.jpg" title="sand"><img src="chair/sand.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/wire.jpg" title="wire"><img src="chair/wire.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/wood.jpg" title="wood"><img src="chair/wood.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/z.jpg" title="z"><img src="chair/z.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zi.jpg" title="zi"><img src="chair/zi.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zi0.jpg" title="zi0"><img src="chair/zi0.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zin.jpg" title="zin"><img src="chair/zin.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zin1.jpg" title="zin1"><img src="chair/zin1.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zin2.jpg" title="zin2"><img src="chair/zin2.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zin3.jpg" title="zin3"><img src="chair/zin3.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc.jpg" title="zinc"><img src="chair/zinc.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc0.jpg" title="zinc0"><img src="chair/zinc0.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc1.jpg" title="zinc1"><img src="chair/zinc1.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc2.jpg" title="zinc2"><img src="chair/zinc2.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc3.jpg" title="zinc3"><img src="chair/zinc3.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc4.jpg" title="zinc4"><img src="chair/zinc4.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc5.jpg" title="zinc5"><img src="chair/zinc5.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc6.jpg" title="zinc6"><img src="chair/zinc6.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc7.jpg" title="zinc7"><img src="chair/zinc7.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc8.jpg" title="zinc8"><img src="chair/zinc8.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc9.jpg" title="zinc9"><img src="chair/zinc9.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc10.jpg" title="zinc10"><img src="chair/zinc10.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc11.jpg" title="zinc11"><img src="chair/zinc11.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc12.jpg" title="zinc12"><img src="chair/zinc12.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc13.jpg" title="zinc13"><img src="chair/zinc13.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc14.jpg" title="zinc14"><img src="chair/zinc14.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc15.jpg" title="zinc15"><img src="chair/zinc15.jpg" alt=""></a>
+      <a class="tile" data-type="image" href="chair/zinc16.jpg" title="zinc16"><img src="chair/zinc16.jpg" alt=""></a>
 
+    </div>
+  </section>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <div class="content" role="document">
+      <button class="close" id="lbClose" aria-label="Close (Esc)"><i class="fa fa-times"></i></button>
+      <!-- dynamic media will be injected here -->
+    </div>
+  </div>
 
-	<!--ADDITIONAL-->
-	<a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <div class="col">
+        <div class="brand-sm"><div class="logo">B</div><div><strong>B.J.C LTD</strong><br><small>God's Firm Zinc Company</small></div></div>
+        <small>Old treasurystreet • Bamenda • Cameroon</small>
+      </div>
 
-	<!--JAVASCRIPT-->
-	<script type="text/javascript" src="index.js"></script>
+      <div class="col">
+        <strong>Contact</strong>
+        <div style="margin-top:8px"><a href="mailto:albertinejapheth@gmail.com">albertinejapheth@gmail.com</a></div>
+        <div style="margin-top:8px"><a href="tel:+237679243380">+237 679 24 33 80</a></div>
+      </div>
+
+      <div class="col">
+        <strong>Follow</strong>
+        <div style="margin-top:8px"><a href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></div>
+        <div style="margin-top:8px"><a href="https://www.instagram.com/blessed_japhet_company_ltd/" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:18px; color:#9fb0d9">© B.J.C LTD.</div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu toggle
+    const hambtn = document.getElementById('hambtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hambtn.addEventListener('click', () => {
+      const open = mobileMenu.style.display !== 'block';
+      mobileMenu.style.display = open ? 'block' : 'none';
+      hambtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Video hover play in tiles (muted)
+    document.querySelectorAll('.gallery-grid .tile video').forEach(video=>{
+      // play on hover, pause on leave (for pointer devices)
+      video.addEventListener('mouseenter', () => { try{ video.play(); }catch(e){} });
+      video.addEventListener('mouseover', () => { try{ video.play(); }catch(e){} });
+      video.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      // also click to open modal (bubble up to anchor)
+    });
+
+    // Lightbox logic: open image or video in modal
+    const lightbox = document.getElementById('lightbox');
+    const lbClose = document.getElementById('lbClose');
+    const grid = document.getElementById('grid');
+
+    function openLightbox(href, type, title = '') {
+      const content = lightbox.querySelector('.content');
+      // Remove previous media
+      const existing = content.querySelector('.lb-media');
+      if (existing) existing.remove();
+
+      if (type === 'video') {
+        const vid = document.createElement('video');
+        vid.className = 'lb-media';
+        vid.src = href;
+        vid.controls = true;
+        vid.autoplay = true;
+        vid.muted = false;
+        vid.playsInline = true;
+        vid.style.maxHeight = '80vh';
+        content.appendChild(vid);
+      } else {
+        const img = document.createElement('img');
+        img.className = 'lb-media';
+        img.src = href;
+        img.alt = title || '';
+        content.appendChild(img);
+      }
+
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      // stop video if any
+      const existing = lightbox.querySelector('.lb-media');
+      if (existing && existing.tagName === 'VIDEO') {
+        try{ existing.pause(); existing.src = ''; }catch(e){}
+      }
+      document.body.style.overflow = '';
+    }
+
+    // Delegate clicks on tiles
+    grid.addEventListener('click', (ev)=>{
+      // find the anchor tile
+      const tile = ev.target.closest('.tile');
+      if (!tile) return;
+      ev.preventDefault();
+      const href = tile.getAttribute('href') || tile.dataset.href;
+      const type = tile.dataset.type || (tile.querySelector('video') ? 'video' : 'image');
+      const title = tile.getAttribute('title') || '';
+      if (!href) return;
+      openLightbox(href, type, title);
+    });
+
+    // close button
+    lbClose.addEventListener('click', closeLightbox);
+    // click outside to close
+    lightbox.addEventListener('click', (ev)=> {
+      if (ev.target === lightbox) closeLightbox();
+    });
+    // ESC key to close
+    window.addEventListener('keydown', (ev)=> {
+      if (ev.key === 'Escape') closeLightbox();
+    });
+
+    // Small enhancement: lazy-load images (native)
+    document.querySelectorAll('.gallery-grid .tile img').forEach(img=>{
+      img.loading = 'lazy';
+    });
+
+    // Prevent anchors from navigating
+    document.querySelectorAll('.gallery-grid .tile').forEach(a=> a.addEventListener('auxclick', e => e.preventDefault()));
+  </script>
 </body>
-
 </html>
