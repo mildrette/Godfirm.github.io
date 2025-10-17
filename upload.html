@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>God's Firm Company Ltd</title>
+  <link rel="icon" type="image/png" href="Images/God.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/afeo-logo.png" alt="Afeo" height="44" class="me-2"> Afeo Roofing
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link active" href="upload.html">Upload Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i> Cart <span id="cart-count" class="badge bg-warning text-dark ms-1">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <h2>Upload Your Project</h2>
+      <p class="text-muted">Share designs, photos, or proposals. We'll review and get back to you.</p>
+
+      <form id="upload-form" class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Your Name</label>
+          <input class="form-control" id="u-name" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Contact (phone or email)</label>
+          <input class="form-control" id="u-contact" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Project Title</label>
+          <input class="form-control" id="u-title" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Description</label>
+          <textarea id="u-desc" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="col-12">
+          <label class="form-label">Images (you can select multiple)</label>
+          <input id="u-files" type="file" class="form-control" accept="image/*" multiple>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Upload Project</button>
+        </div>
+      </form>
+
+      <hr class="my-5">
+      <h3>Uploaded Projects (Shop Preview)</h3>
+      <div id="projects-grid" class="row g-4 mt-2"></div>
+
+      <hr class="my-5">
+      <h3>Uploaded Projects Details</h3>
+      <div id="projects-list" class="row g-4 mt-2"></div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light py-4 text-center small">
+    © <span id="year5"></span> Afeo Roofing & Building Materials
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year5').innerText = new Date().getFullYear();
+    App.init();
+
+    // --- Render Projects as "Shop Items" ---
+    function renderProjectsGrid(){
+      const list = App.getProjects().slice().reverse();
+      const container = document.getElementById('projects-grid');
+      container.innerHTML = '';
+      if(list.length === 0){
+        container.innerHTML = '<div class="col-12"><p class="text-muted">No projects uploaded yet.</p></div>';
+        return;
+      }
+      list.forEach((p, idx) => {
+        const col = document.createElement('div');
+        col.className = 'col-sm-6 col-md-4 col-lg-3';
+        col.innerHTML = `
+          <div class="card product-card h-100">
+            <img src="${p.images[0] || 'images/placeholder.jpg'}" class="card-img-top" alt="${p.title}" style="height:150px;object-fit:cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${p.title}</h5>
+              <p class="text-muted mb-2">${p.desc || ''}</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <a href="product.html?id=${p.id || 'uploaded-'+idx}" class="btn btn-outline-primary btn-sm">Details</a>
+                <button class="btn btn-warning btn-sm" onclick="App.addToCart('${p.id || 'uploaded-'+idx}',1)">Add <i class="fa fa-plus ms-1"></i></button>
+              </div>
+            </div>
+          </div>`;
+        container.appendChild(col);
+      });
+    }
+
+    // --- Render Projects Details (name/contact) ---
+    function renderProjectsList(){
+      const list = App.getProjects().slice().reverse();
+      const container = document.getElementById('projects-list');
+      container.innerHTML = '';
+      if(list.length === 0){
+        container.innerHTML = '<div class="col-12"><p class="text-muted">No projects uploaded yet.</p></div>';
+        return;
+      }
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'col-md-6';
+        const imgs = (p.images||[]).map(i => `<img src="${i}" style="width:120px;height:80px;object-fit:cover;border-radius:6px;margin-right:6px">`).join('');
+        card.innerHTML = `
+          <div class="card p-3">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5>${p.title}</h5>
+                <small class="text-muted">By ${p.name} • ${p.contact}</small>
+                <p class="mt-2">${p.desc || ''}</p>
+                <div>${imgs}</div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    renderProjectsGrid();
+    renderProjectsList();
+
+    // --- Handle form submission ---
+    document.getElementById('upload-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('u-name').value.trim();
+      const contact = document.getElementById('u-contact').value.trim();
+      const title = document.getElementById('u-title').value.trim();
+      const desc = document.getElementById('u-desc').value.trim();
+      const files = Array.from(document.getElementById('u-files').files);
+
+      const images = [];
+      for(const f of files){
+        images.push(await App.fileToBase64(f));
+      }
+
+      App.saveProject({ name, contact, title, desc, images, created: new Date().toISOString() });
+
+      e.target.reset();
+      renderProjectsGrid();
+      renderProjectsList();
+
+      alert('Project uploaded (saved locally). We will contact you soon.');
+    });
+  </script>
+</body>
+</html>

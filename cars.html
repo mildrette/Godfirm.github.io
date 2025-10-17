@@ -1,314 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-	<title>Blessed Japheht Company Ltd</title>
-	<!--META TAGS-->
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-
-	<!--FONT AWESOME-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<!--GOOGLE FONTS-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
-		rel="stylesheet">
-
-	<!--STYLESHEET-->
-	<link rel="stylesheet" href="style.css">
-
-	<style>
-		h1 {
-			font-family: Satisfy;
-			font-size: 50px !important;
-			text-align: center;
-			color: black;
-			padding: 1%;
-		}
-
-		#gallery {
-			-webkit-column-count: 4;
-			-moz-column-count: 4;
-			column-count: 4;
-			-webkit-column-gap: 20px;
-			-moz-column-gap: 20px;
-			column-gap: 20px;
-		}
-
-		@media (max-width: 1200px) {
-			#gallery {
-				-webkit-column-count: 3;
-				-moz-column-count: 3;
-				column-count: 3;
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
-
-		@media (max-width: 800px) {
-			#gallery {
-				-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-				-webkit-column-gap: 20px;
-				-moz-column-gap: 20px;
-				column-gap: 20px;
-			}
-		}
-
-		@media (max-width: 600px) {
-			#gallery {
-				-webkit-column-count: 1;
-				-moz-column-count: 1;
-				column-count: 1;
-			}
-		}
-
-		#gallery img {
-			width: 100%;
-			height: auto;
-			margin: 4% auto;
-			box-shadow: -3px 5px 15px #000;
-			cursor: pointer;
-			-webkit-transition: all 0.2s;
-			transition: all 0.2s;
-		}
-
-		@media (hover: hover) and (pointer: fine) {
-			#gallery img:hover {
-				transform: scale(1.05);
-				/* Add a hover effect on desktop devices */
-			}
-		}
-
-		@media (hover: none) and (pointer: coarse) {
-			#gallery img:hover {
-				transform: none;
-				/* Remove hover effect on mobile devices */
-			}
-		}
-
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 9999;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.7);
-		}
-
-		.modal-content {
-			margin: 10% auto;
-			max-width: 600px;
-			background-color: #fff;
-			padding: 20px;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-		}
-
-		.close {
-			color: #aaa;
-			float: right;
-			font-size: 28px;
-			font-weight: bold;
-			cursor: pointer;
-		}
-
-		.close:hover,
-		.close:focus {
-			color: black;
-			text-decoration: none;
-			cursor: pointer;
-		}
-
-
-
-		/* ::::::::::::::::::::::::::::::::::::: */
-		/* ::::::::::: MODAL IMAGE :::::::::::: */
-		/* ::::::::::::::::::::::::::::::::::::: */
-
-		.modal {
-			display: none;
-			position: fixed;
-			z-index: 1;
-			padding-top: 20px;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			overflow: auto;
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-
-		.modal-content {
-			margin: auto;
-			display: block;
-			width: auto;
-			max-width: 90%;
-			max-height: 90%;
-			position: relative;
-			transform: translate(-50%, -50%);
-			top: 50%;
-			left: 50%;
-		}
-
-		.modal-content img {
-			width: 100%;
-			height: auto;
-		}
-
-		.modal-content .close {
-			position: absolute;
-			top: 50%;
-			right: -30px;
-			color: white;
-			font-size: 30px;
-			font-weight: bold;
-			transition: 0.3s;
-			cursor: pointer;
-			transform: translateY(-50%);
-		}
-
-		.modal-content .close:hover {
-			color: #bbb;
-		}
-	</style>
+  <meta charset="utf-8">
+  <title>Afeo Roofing & Building Materials</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="images/afeo-logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-	<!--HEADER-->
-	<header>
-		<div class="header">
-			<section>
-				<span><a href="emailto:albertinejaphet@gmail.com"><i class="fa fa-envelope"></i>
-						albertinejapheth@gmail.com</a></span>
-				<span><a href="tel:"><i class="fa fa-phone"></i> (+237) 670 81 09 95</a></span>
-			</section>
-			<section>
-				<span><a
-						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
-							class="fa fa-facebook"></i></a></span>
-				<span><a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"><i
-							class="fa fa-instagram"></i></a></span>
-				<span><a href="tell:+237 679243380"><i class="fa fa-whatsapp"></i></a></span>
-			</section>
-		</div>
-	</header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Images/Godfirm.png" alt="Afeo" height="44" class="me-2">
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="upload.html">Upload Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i> Cart <span id="cart-count" class="badge bg-warning text-dark ms-1">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-	<!-- header ID section TOP NAVIGATION-->
-	<nav id="header">
-		<div class="topnav" id="myTopnav">
-			<a href="index.html">Home</a>
-			<!-- <a href="cars.html">Cars</a> -->
-			<a href="snacks.html">Food Items</a>
-			<a href="building.html">contruction</a>
-			<a href="Non-food.html">Non-food items</a>
-			<a href="chairs.html">Office Equipment</a>
-			<a href="tel:+237 679 24 33 80">Contact Us</a>
-			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="NavBar()">&#9776;</a>
-		</div>
-	</nav>
+  <!-- Hero -->
+ <header class="hero text-white text-center d-flex align-items-center justify-content-center">
+  <div class="container hero-content px-3">
+    <h1 class="display-4 fw-bold mb-3">Afeo Roofing & Building Materials</h1>
+    <p class="lead mb-4">Quality roofing, iron rods, paints, and nails — built to last.</p>
+    <a href="shop.html" class="btn btn-warning btn-lg">Shop Now</a>
+  </div>
+</header>
 
 
-	<div id="gallery">
-		<img src="car/car.jpg" alt="Image 1">
-		<img src="car/car_545b78d1-0ba1-4cc4-b350-d071e5fb0390.jpeg" alt="Image 3">
-		<img src="car/car_eff0085b-5ac1-424e-885d-15306bb1676c.jpeg" alt="Image 4">
-		<img src="car/CARCAR.jpg" alt="Image 5">
-		<img src="car/CARS.jpg" alt="Image 6">
-		<img src="car/d70a5867-63cd-4cd3-aa56-489261561189-810x675.jpg" alt="Image 7">
-		<img src="car/toyatacar.jpg" alt="Image 8">
-		<img src="car/car1.webp" alt="Image 9">
-	</div>
+  <!-- Featured -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Featured Products</h2>
+      <div id="featured-row" class="row g-4"></div>
+    </div>
+  </section>
 
-	<!-- Modal/Popup -->
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="modalImage" alt="Modal Image">
-	</div>
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4">
+    <div class="container text-center small">
+      © <span id="year"></span> God's Firm Co. Ltd
+    </div>
+  </footer>
 
-	<script>
-		var modal = document.getElementById("myModal");
-		var modalImg = document.getElementById("modalImage");
-
-		var images = document.getElementsByTagName("img");
-		var modalClose = document.getElementsByClassName("close")[0];
-
-		// Attach click event listeners to each image
-		for (var i = 0; i < images.length; i++) {
-			images[i].addEventListener("click", openModal);
-		}
-
-		// Open the modal
-		function openModal() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
-		}
-
-		// Close the modal when the close button is clicked
-		modalClose.addEventListener("click", closeModal);
-
-		function closeModal() {
-			modal.style.display = "none";
-		}
-
-		// Close the modal when the user clicks outside of it
-		window.addEventListener("click", function (event) {
-			if (event.target == modal) {
-				closeModal();
-			}
-		});
-	</script>
-
-
-
-
-	<!--FOOTER-->
-	<footer>
-		<div class="middle_section">
-			<section>
-				<span>Visit our social media Handles</span>
-				<span>
-					<a
-						href="https://www.facebook.com/people/Blessed-Japhet-Company-Limited-LTD/100092669433843/?mibextid=ZbWKwL"><i
-							target="_blank"><i class="fa fa-facebook"></i></a>
-					<a href="https://www.instagram.com/blessed_japhet_company_ltd/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
-						target="_blank"><i class="fa fa-instagram"></i></a>
-					<a href="https://wa.me/237679243380" target="_blank"><i class="fa fa-whatsapp"></i></a>
-				</span>
-				<span>
-					Old treasurystreet
-					Bamenda
-					Cameroon
-					<hr>
-					Get in Touch with Us:
-					<a href="tel:+237 679 24 33 80" target="_blank">+237 679 24 33 80</a>
-				</span>
-			</section>
-		</div>
-		<div class="bottom_section">
-			<span>B.J.C LTD.</span>
-		</div>
-	</footer>
-
-
-
-	<!--ADDITIONAL-->
-	<a href="#" id="roll_back" class="animate"><i class="fa fa-angle-up"></i></a>
-
-	<!--JAVASCRIPT-->
-	<script type="text/javascript" src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    App.init();
+    const featured = App.getProducts().slice(0,4);
+    const container = document.getElementById('featured-row');
+    featured.forEach(p => {
+      const col = document.createElement('div');
+      col.className = 'col-md-3';
+      col.innerHTML = `
+        <div class="card product-card h-100">
+          <img src="${p.image}" class="card-img-top" alt="${p.title}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${p.title}</h5>
+            <p class="card-text text-muted mb-2">${p.short}</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="product.html?id=${p.id}" class="btn btn-outline-primary btn-sm">Details</a>
+              <button class="btn btn-warning btn-sm" onclick="App.addToCart('${p.id}',1)">Add <i class="fa fa-plus ms-1"></i></button>
+            </div>
+          </div>
+        </div>`;
+      container.appendChild(col);
+    });
+  </script>
 </body>
-
 </html>
