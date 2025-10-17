@@ -37,7 +37,7 @@
   body{
   margin:0;
   overflow-x:hidden !important;
-  font-family: 'Source Sans Pro', sans-serif;
+ font-family: 'Poppins', sans-serif;
   }
   
   a{
@@ -388,7 +388,7 @@ font-family: 'Poppins', sans-serif;
   justify-content: center;
   position: relative;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+ font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
 
@@ -459,11 +459,11 @@ font-family: 'Poppins', sans-serif;
 }
 
 .banner .btn1.dark {
-  background-color: #1e1e1e;
+  background-color: #e30846d5;
 }
 
 .banner .btn1.dark:hover {
-  background-color: #333;
+  background-color: #63013a;
 }
 
 
@@ -509,17 +509,48 @@ font-family: 'Poppins', sans-serif;
 
 
   /******************================About section====================***********************/
-.about-section {
-  padding: 4rem 2rem;
-  background: #f8f9fa;
-  font-family: 'Roboto', sans-serif;
+  .about-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 40%, #e8f5f1);
+  font-family: 'Poppins', sans-serif;
   color: #333;
 }
 
-.about-wrapper {
-  max-width: 1100px;
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1500px;
   margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.about-images img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.about-content {
+  flex: 2;
   text-align: center;
+  padding: 1rem;
 }
 
 .about-title {
@@ -529,74 +560,150 @@ font-family: 'Poppins', sans-serif;
   color: #1e1e1e;
 }
 
-.about-title span {
+.about-title em {
   color: #007b5e;
 }
 
 .intro {
   font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 3rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: #444;
 }
 
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
 }
 
 .about-card {
   background: #fff;
   border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
   padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .about-card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
   border-radius: 10px;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
 .about-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
   color: #007b5e;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .about-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
   color: #555;
+  font-size: 0.95rem;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-images img {
+    width: 45%;
+    height: 180px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
 }
 
-.contact-info p {
-  margin: 5px 0;
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 2rem;
 }
 
-.contact-info a {
-  color: #007b5e;
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
   text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+.contact-btn.phone {
+  background: #01236d;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+}
+
+.contact-btn.phone:hover {
+  background: #1eb255;
+}
+
+.contact-btn.email {
+  background: #0566e4;
+  box-shadow: 0 5px 20px rgba(24, 119, 242, 0.3);
+}
+
+.contact-btn.email:hover {
+  background: #145dbf;
+}
+
+.contact-btn.website {
+  background: #039137; 
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+}
+
+.contact-btn.website:hover {
+  background: #1eb255;
 }
 
 @media (max-width: 768px) {
-  .about-title { font-size: 2rem; }
-  .intro { font-size: 1rem; }
-  .about-card img { height: 140px; }
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: 80%;
+    justify-content: center;
+  }
 }
 
 
@@ -604,7 +711,7 @@ font-family: 'Poppins', sans-serif;
 .services-section {
   padding: 4rem 2rem;
   background: #f3f7f6;
-  font-family: 'Roboto', sans-serif;
+   font-family: 'Poppins', sans-serif;
 }
 
 .section-header {
@@ -799,12 +906,17 @@ font-family: 'Poppins', sans-serif;
   
   footer {
   width: 100%;
-  background-color: #111;
+  background-color: #000516;
   color: #fff;
   text-align: center;
   padding: 2rem 1rem;
   font-family: 'Poppins', sans-serif;
 }
+ footer p{
+  line-height:1.6em;
+  letter-spacing:0.06em;
+   color: #c0c3d6;
+  }
 
 footer a {
   color: #00b894;
@@ -818,12 +930,13 @@ footer a:hover {
 
 footer i {
   margin: 0 0.5rem;
-  color: #00b894;
-  transition: transform 0.3s ease;
+  color: #f8fcfb;
+
 }
 
 footer i:hover {
   transform: scale(1.2);
+  color: #00b894;
 }
 
 @media (max-width: 480px) {
@@ -865,9 +978,7 @@ footer i:hover {
 
 
 
-/* Mobile View */
 @media (max-width: 768px) {
-  /* Reset font size and line height for mobile devices */
   body {
     font-size: 14px;
     line-height: 1.6em;
@@ -948,7 +1059,6 @@ footer {
   margin-bottom: 10px;
 }
 
-  /* Adjust banner section */
   .banner section h1 {
     font-size: 30px !important;
     line-height: 1;
@@ -961,7 +1071,6 @@ footer {
     padding: 10px 0;
   }
 
-  /* Adjust about-japhet section */
   .about-japhet .title {
     font-size: 2.3em;
     line-height: 1.5;
@@ -980,8 +1089,6 @@ footer {
     margin: 10px 20px;
     font-size: 14px;
   }
-
-  /* Adjust section1 section */
   .section1 .title_header {
     font-size: 20px;
     line-height: 1.5;
