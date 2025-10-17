@@ -4,12 +4,29 @@ body {
      color: #222; 
     }
 
+  .navbar{
+    background-color: #000a27;
+  }
+
+    .navbar .nav-link{
+    color: white;
+  }
+
 .hero {
-  background: linear-gradient(0deg, rgba(0,78,146,0.85), rgba(0,78,146,0.85)), url('images/roof-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(0deg, rgba(1, 53, 99, 0.85), rgba(0, 53, 99, 0.85)), url('images/roof-bg.jpg') center/cover no-repeat;
   padding: 6rem 0; 
   margin-bottom: 1rem;
 }
 
+.btn{
+  background-color: rgb(199, 136, 2);
+  color: white;
+}
+
+.btn:hover{
+  background-color: rgb(199, 2, 94);
+  color: rgb(250, 173, 6);
+}
 .product-card img { height: 180px; 
   object-fit: cover; 
   border-radius: 8px 8px 0 0; 
